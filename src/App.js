@@ -4,30 +4,35 @@ import Ofertas from './pages/Ofertas.jsx';
 import Home from './pages/Home.jsx';
 import Categorias from './pages/Categorias.jsx'
 import './App.css'
+import BarraDeNavegacion from './barra_de_navegacion/BarraDeNavegacion.jsx';
+import Carrito from './pages/Carrito.jsx';
+import CrearCuenta from './pages/CrearCuenta.jsx';
+import MisCompras from './pages/MisCompras.jsx';
+import Historial from './pages/Historial.jsx';
+import Ingresar from './pages/Ingresar.jsx';
+import Vender from './pages/Vender.jsx';
+import Ayuda from './pages/Ayuda.jsx';
 
 
 class App extends Component {
 render() {
 	return (
 	<Router>
-		<div className="App">
-			<ul className="App-header">
-			<li>
-				<Link to="/">Home</Link>
-			</li>
-			<li>
-				<Link to="/help">Help</Link>
-			</li>
-			<li>
-				<Link to="/ofertas">For Sale</Link>
-			</li>
-			</ul>
+    <BarraDeNavegacion />
 		<Routes>
-				<Route  path='/' element={<Home />}></Route>
-				<Route  path='/help' element={<Categorias />}></Route>
+				<Route  path='/home' element={<Home />}></Route>
+				<Route  path='/categorias' element={<Categorias />}></Route>
 				<Route  path='/ofertas' element={<Ofertas />}></Route>
+				<Route  path='/carrito' element={<Carrito />}></Route>
+				<Route  path='/crear_cuenta' element={<CrearCuenta />}></Route>
+				<Route  path='/historial' element={<Historial />}></Route>
+				<Route  path='/ingresar' element={<Ingresar />}></Route>
+				<Route  path='/mis_compras' element={<MisCompras />}></Route>
+				<Route  path='/vender' element={<Vender />}></Route>
+				<Route  path='/help' element={<Ayuda />}></Route>
+
 		</Routes>
-		</div>
+
 	</Router>
 );
 }
