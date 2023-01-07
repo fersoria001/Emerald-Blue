@@ -1,0 +1,10 @@
+.banner{
+    height: 30vh;
+}
+
+.banner img{
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    max-height: 30vh;
+}

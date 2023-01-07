@@ -7,7 +7,7 @@ export default function Product({
 }) {
   return (
     <div className='card' style={{width:"18 rem"}} key={product.id}>
-    //img
+    <img src={product.img} class="card-img-top" alt="..." style={{height: "10rem", width: "10rem"}}/>
     <div className="card-body">
       <h3 className="card-title">{product.name}</h3>
       <p className="card-text">{product.description}</p>

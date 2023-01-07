@@ -5,42 +5,24 @@
       "name": "mate",
       "description": "mate de la escaloneta",
       "price": 12000,
-      "inStock": true
+      "inStock": true,
+      "img": "https://m.media-amazon.com/images/I/81VqHE-h7uL.jpg"
     },
     {
       "name": "Mate",
       "description": "Mate de Cuero",
       "price": "19",
       "inStock": true,
-      "id": 1
+      "id": 1,
+      "img": "http://d2r9epyceweg5n.cloudfront.net/stores/001/025/418/products/mate-uruguayo1-966d5c50dd2f04c66716221274307583-640-0.jpg"
     },
     {
       "name": "Mate",
-      "description": "Mate de Madera",
+      "description": "Mate de calabaza",
       "price": "8000",
       "inStock": true,
-      "id": 2
-    },
-    {
-      "name": "Mate",
-      "description": "Mate de plastico",
-      "price": "7000",
-      "inStock": true,
-      "id": 3
-    },
-    {
-      "name": "Termo",
-      "description": "Termo de aluminio",
-      "price": "12000",
-      "inStock": true,
-      "id": 5
-    },
-    {
-      "name": "Termo",
-      "description": "Termo Stanley",
-      "price": "25000",
-      "inStock": false,
-      "id": 6
+      "id": 2,
+      "img": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Mate_en_calabaza.jpg"
     }
   ]
 }

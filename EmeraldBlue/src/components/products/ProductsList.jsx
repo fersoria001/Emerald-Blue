@@ -6,11 +6,13 @@ import {
   updateProduct,
 } from "./service/products_service";
 import Product from "./views/Product";
-export const Products = () => {
+
+
+export default function ProductsList(){
   const queryClient = useQueryClient();
   const {
     isLoading,
-    data: products,
+    data: products, // en este caso es un alias
     isError,
     error,
   } = useQuery({
