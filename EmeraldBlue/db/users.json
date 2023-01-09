@@ -1,0 +1,11 @@
+{
+    "users": [
+      {
+        "username": "fer",
+        "password": "asd"
+      },
+      {
+        "jwt": "null"
+      }
+    ]
+}

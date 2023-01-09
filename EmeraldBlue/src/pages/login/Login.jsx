@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import useUser from "../../hooks/useUser";
 
 
 
@@ -7,12 +8,16 @@ export const Login = () => {
   const [username, setUsername]= useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const {login, isLogged} = useUser();
+
+  useEffect(() => {
+    if(isLogged) navigate('/vender') 
+  }, [isLogged, navigate])
   
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`${username}, ${password}`);
-    navigate('/vender');
+    login({ username, password })
   };
 
   return (

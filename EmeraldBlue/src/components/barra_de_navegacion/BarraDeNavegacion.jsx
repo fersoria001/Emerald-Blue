@@ -2,9 +2,16 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import './barra_de_navegacion.css';
 import emerald from "./emerald.png";
+import useUser from '../../hooks/useUser';
 
 export default function BarraDeNavegacion() {
-  const isLogged = false;
+  //const isLogged = false;
+  const {isLogged, logout} = useUser()
+  const handleClick = e =>{
+    e.preventDefault()
+    logout()
+  }
+
   return (
     <nav className="navbar">
       <div className='container-fluid'>
@@ -25,7 +32,7 @@ export default function BarraDeNavegacion() {
         <Link to="/vender" className="btn btn-outline-primary btn-sm">Sell</Link>
         <Link to="/crear_cuenta" className="btn btn-outline-primary btn-sm">Create Account</Link>
         <section id='sesion'>
-        {isLogged ? <Link className="btn btn-outline-primary btn-sm" to="/logout">LogOut</Link> :
+        {isLogged ? <Link className="btn btn-outline-primary btn-sm" onClick={handleClick} href='#'>LogOut</Link> :
         <Link to="/login" className="btn btn-outline-primary btn-sm">Login</Link> }
         </section>
         <Link to="/help" className="btn btn-outline-primary btn-sm">Help</Link>
