@@ -4,11 +4,10 @@ import {
   getProducts,
   deleteProduct,
   updateProduct,
-} from "../../services/products_service";
-import Product from "./views/Product";
+} from "./service/products_service";
 
 
-export default function ProductsList(){
+export default function Products(){
   const queryClient = useQueryClient();
   const {
     isLoading,
@@ -38,22 +37,23 @@ export default function ProductsList(){
   if (isLoading) return <div> Loading ...</div>;
   else if (isError) return <div> Error : {error.message} </div>;
   
-
-  const productCards = products.map((product) => (
-    <div className="col-3 my-2 px-2">
-    <Product
-      product={product}
-      updateProductMutation={updateProductMutation}
-      deleteProductMutation={deleteProductMutation}
-    />
-    </div> ))
-  const productRow = 
-    <div className="row mx-5">
-      {productCards}
-    </div>
-  return (
-    <div className="container-fluid mt-5">
-      {productRow}
-    </div>)
-  ;
+  return products.map(product => (
+    <div key={product.id}>
+    <h3>{product.nombre}</h3>
+    <p>{product.descripcion}</p>
+    <p>{product.precio}</p>  
+    <button onClick={ () => {deleteProductMutation.mutate(product.id)}}>Delete</button>
+    <input type="checkbox"
+    id={product.id}
+    name="inStock"
+    className="form-control-sm"
+    onChange={e => {
+      updateProductMutation.mutate({
+        ...product,
+        inStock: e.target.checked,
+      })
+    }} />
+    <label htmlFor={product.id}> In stock?</label>
+  </div>
+  ));     
 };

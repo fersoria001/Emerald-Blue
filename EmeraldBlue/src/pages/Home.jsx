@@ -3,26 +3,21 @@ import '../styles/home.css'
 import flecha from '../assets/Vector.png';
 import regalos from '../assets/regalos.jpg';
 import ProductsList from '../components/products/ProductsList.jsx';
-
+import { useContext } from 'react'
+import SideBarContext from '../context/SideBarContext'
 export default function Home() {
+  const {sidebar} = useContext(SideBarContext)
   return (
     <>
-
-    <section className='destacados'>
-    <div className='banner' id='banner'>
+    <section className='destacados' style={{height: "90vh"}}>
+    <div className={sidebar ? "banner ms-5" : "banner ms-1"}>
     <img src={regalos} className="d-block w-100" alt="..." />
     </div>
+    <div className="text-center">
+          <img className="img-fluid" src={flecha} alt="flecha" />
+          Ver todo
+        </div>
     </section>
-    <section className='productos'>
-      <h2> Productos </h2>
-      <section className="productos-sesion" data-product>
-      <ProductsList />
-      </section>  
-      <div className='container ms-auto'>
-        Ver todo <img className='img-fluid' src={flecha} alt='flecha' />
-      </div>
-    </section>
-
     </>
   )
 }

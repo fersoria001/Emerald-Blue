@@ -1,0 +1,26 @@
+#footer{
+    position:relative;
+    left:0;
+    bottom:0;
+    right:0;
+}
+
+.contenedor-flex {
+    background-color: azure;
+    border: black solid;
+    display: flex;
+}
+.columna {
+    display:flex;
+    border: gray solid;
+    flex-direction: column;
+    flex: 1;
+}
+
+#info {
+    text-align: start;
+    flex: 2;
+}
+.columna a{
+    text-decoration: none;
+}

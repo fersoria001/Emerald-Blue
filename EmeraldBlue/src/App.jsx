@@ -1,8 +1,9 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom";
 import BarraDeNavegacion from "./components/barra_de_navegacion/BarraDeNavegacion.jsx";
+import SideBar from "./components/SideBar.jsx";
 import Carrito from "./pages/Carrito.jsx";
-import CrearCuenta from "./pages/CrearCuenta.jsx";
+import { CrearCuenta } from "./pages/CrearCuenta.jsx";
 import MisCompras from "./pages/MisCompras.jsx";
 import Historial from "./pages/Historial.jsx";
 import { Login } from "./pages/login/Login.jsx";
@@ -13,16 +14,21 @@ import Categorias from "./pages/Categorias.jsx";
 import Ofertas from "./pages/Ofertas.jsx";
 import LogOut from "./pages/LogOut";
 import { UserContextProvider } from "./context/UserContext";
+import { SideBarContextProvider } from "./context/SideBarContext"
+import Footer from "./pages/Footer.jsx";
+import './App.css';
 
 function App() {
   return (
     <UserContextProvider>
       <Router>
-        <BarraDeNavegacion />
+      <SideBarContextProvider>
+      <BarraDeNavegacion />
+      <SideBar />
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/help" element={<Categorias />}></Route>
-          <Route path="/home" element={<Home />}></Route>
+          <Route index element={<Home />}></Route>
           <Route path="/categorias" element={<Categorias />}></Route>
           <Route path="/ofertas" element={<Ofertas />}></Route>
           <Route path="/carrito" element={<Carrito />}></Route>
@@ -34,7 +40,10 @@ function App() {
           <Route path="/vender" element={<Vender />}></Route>
           <Route path="/help" element={<Ayuda />}></Route>
         </Routes>
+        {/* <Footer /> */}
+        </SideBarContextProvider>
       </Router>
+
     </UserContextProvider>
   );
 }

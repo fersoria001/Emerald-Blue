@@ -7,22 +7,29 @@
       "price": 12000,
       "inStock": true,
       "img": "https://m.media-amazon.com/images/I/81VqHE-h7uL.jpg"
+    }
+  ],
+  "users": [
+    {
+      "id": 0,
+      "name": "mate",
+      "surname": "mate de la escaloneta",
+      "email": "12512@gmail.com",
+      "password": "1245"
     },
     {
-      "name": "Mate",
-      "description": "Mate de Cuero",
-      "price": "19",
-      "inStock": true,
-      "id": 1,
-      "img": "http://d2r9epyceweg5n.cloudfront.net/stores/001/025/418/products/mate-uruguayo1-966d5c50dd2f04c66716221274307583-640-0.jpg"
+      "name": "dwe",
+      "surname": "dw",
+      "email": "bercho001@gmail.com",
+      "password": "asfasf",
+      "id": 1
     },
     {
-      "name": "Mate",
-      "description": "Mate de calabaza",
-      "price": "8000",
-      "inStock": true,
-      "id": 2,
-      "img": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Mate_en_calabaza.jpg"
+      "name": "sd",
+      "surname": "sdgf",
+      "email": "bercho001@gmail.com",
+      "password": "asdasgasg",
+      "id": 2
     }
   ]
 }
