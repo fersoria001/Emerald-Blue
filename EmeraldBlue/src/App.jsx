@@ -6,7 +6,6 @@ import {
   Outlet,
 } from "react-router-dom";
 import BarraDeNavegacion from "./components/barra_de_navegacion/BarraDeNavegacion.jsx";
-import SideBar from "./components/SideBar.jsx";
 import Carrito from "./pages/Carrito.jsx";
 import { CrearCuenta } from "./pages/CrearCuenta.jsx";
 import MisCompras from "./pages/MisCompras.jsx";
@@ -19,19 +18,19 @@ import Categorias from "./pages/Categorias.jsx";
 import Ofertas from "./pages/Ofertas.jsx";
 import LogOut from "./pages/LogOut";
 import { UserContextProvider } from "./context/UserContext";
-import { SideBarContextProvider } from "./context/SideBarContext";
 import Footer from "./pages/Footer.jsx";
 import "./App.css";
-import SearchContext, { SearchContextProvider } from "./context/SearchContext.jsx";
+import SearchContext, {
+  SearchContextProvider,
+} from "./context/SearchContext.jsx";
 
 function App() {
   return (
     <UserContextProvider>
       <Router>
-        <SideBarContextProvider>
         <SearchContextProvider>
           <BarraDeNavegacion />
-          <SideBar />
+
           <Routes>
             {/* <Route path="/" element={<Home />}></Route> */}
             <Route path="/help" element={<Categorias />}></Route>
@@ -46,11 +45,9 @@ function App() {
             <Route path="/mis_compras" element={<MisCompras />}></Route>
             <Route path="/vender" element={<Vender />}></Route>
             <Route path="/help" element={<Ayuda />}></Route>
-
-            {/* <Footer /> */}
           </Routes>
-          </SearchContextProvider>
-        </SideBarContextProvider>
+          <Footer />
+        </SearchContextProvider>
       </Router>
     </UserContextProvider>
   );

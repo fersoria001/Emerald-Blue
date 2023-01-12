@@ -1,13 +1,12 @@
 import React from "react";
-import { useContext } from 'react'
+import AddProductModal from "../components/products/AddProductModal";
 import ProductTable from "../components/products/ProductTable";
-import SideBarContext from '../context/SideBarContext'
 export default function Vender() {
-  const {sidebar} = useContext(SideBarContext)
   return (
-    <div className={sidebar ? "ms-5" : "ms-1"} style={{ height: "90vh" }}>
+    <div style={{ height: "90vh" }}>
       <section className="productos">
         <h2 className="text-center"> Administrar productos </h2>
+        <AddProductModal />
         <ProductTable />
       </section>
     </div>

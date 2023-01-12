@@ -17,40 +17,40 @@
       "img": "https://m.media-amazon.com/images/I/81VqHE-h7uL.jpg"
     },
     {
-      "id": 2,
-      "name": "mate",
-      "description": "madera de roble",
-      "price": 12000,
-      "inStock": false,
-      "img": "https://m.media-amazon.com/images/I/81VqHE-h7uL.jpg"
-    },
-    {
       "id": 3,
       "name": "matambre",
       "description": "matambre de pollo",
       "price": 12000,
       "inStock": false,
       "img": "https://m.media-amazon.com/images/I/81VqHE-h7uL.jpg"
+    },
+    {
+      "name": "Remera de Boca",
+      "price": "20000",
+      "description": "Remera que uso un chango",
+      "img": "https://www.dexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dwb3a31687/products/AD_GL4175/AD_GL4175-1.JPG",
+      "inStock": true,
+      "id": 4
     }
   ],
   "users": [
     {
       "id": 0,
       "name": "mate",
-      "surname": "mate de la escaloneta",
+      "lastname": "mate de la escaloneta",
       "email": "12512@gmail.com",
       "password": "1245"
     },
     {
       "name": "dwe",
-      "surname": "dw",
+      "lastname": "dw",
       "email": "bercho001@gmail.com",
       "password": "asfasf",
       "id": 1
     },
     {
       "name": "sd",
-      "surname": "sdgf",
+      "lastname": "sdgf",
       "email": "bercho001@gmail.com",
       "password": "asdasgasg",
       "id": 2

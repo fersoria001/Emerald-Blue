@@ -1,27 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./barra_de_navegacion.css";
 import emerald from "./emerald.png";
 import useUser from "../../hooks/useUser";
 import { useContext } from "react";
-import SideBarContext from "../../context/SideBarContext";
 import SearchContext from "../../context/SearchContext";
+import Dropdown from 'react-bootstrap/Dropdown';
+
+
 
 export default function BarraDeNavegacion() {
-  //const isLogged = false;
   const { isLogged, logout } = useUser();
   const handleClick = (e) => {
     e.preventDefault();
     logout();
   };
-  const {sidebar, setSidebar} =  useContext(SideBarContext)
-  console.log(sidebar, setSidebar)
-  const isShowing = ()=>{setSidebar(!sidebar)}
-  const {search, setSearch} = useContext(SearchContext)
+  const { search, setSearch } = useContext(SearchContext);
   function buscar(e) {
     setSearch(e.target.value);
     console.log(e.target.value);
   }
+
   return (
     <nav className="navbar">
       <div className="container-fluid">
@@ -29,13 +28,13 @@ export default function BarraDeNavegacion() {
           <img src={emerald} width="40" height="40" alt="" />
         </Link>
         <form className="form-inline p-3 mx-auto">
-        <input
-        value={search}
-        onChange={buscar}
-        type="text"
-        placeholder="Search..."
-        className="form-control-inline"
-      />
+          <input
+            value={search}
+            onChange={buscar}
+            type="text"
+            placeholder="Search..."
+            className="form-control-inline"
+          />
           <button className="btn btn-success ms-2" type="submit">
             Search
           </button>
@@ -43,7 +42,16 @@ export default function BarraDeNavegacion() {
         <span className="text me-5"> ANUNCIO PROPIO </span>
       </div>
       <div className="container py-2">
-        <button onClick={isShowing}> Categorias </button>
+      <Dropdown>
+      <Dropdown.Toggle className="btn btn-secondary btn-sm" id="dropdown-basic">
+        Categorias
+      </Dropdown.Toggle>
+      <Dropdown.Menu>
+        <Dropdown.Item href="#/action-1">Mates</Dropdown.Item>
+        <Dropdown.Item href="#/action-2">Termos</Dropdown.Item>
+        <Dropdown.Item href="#/action-3">Bombillas</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
         <Link to="/ofertas" className="btn btn-primary btn-sm">
           For Sale
         </Link>
@@ -82,6 +90,5 @@ export default function BarraDeNavegacion() {
         </Link>
       </div>
     </nav>
-    
   );
 }

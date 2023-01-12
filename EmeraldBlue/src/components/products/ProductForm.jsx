@@ -1,5 +1,5 @@
 import React from "react";
-import { createProduct } from "./service/products_service";
+import { createProduct } from "../../services/products_service";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 export default function ProductForm() {
@@ -13,68 +13,52 @@ export default function ProductForm() {
 
   const queryClient = useQueryClient();
 
-  function handleSubmit(e) {
-    e.preventDefault(e);
-    const formData = new FormData(e.target);
-    const product = Object.fromEntries(formData);
-    addProductMutation.mutate({
-      ...product,
-      inStock: true,
-    });
-  }
-
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="row">
+    <form onSubmit={addProductMutation}>
+      <div className="row mb-4">
         <div className="col">
-          <label htmlFor="nombre"> Name </label>
-          <input
-            type="text"
-            id="nombre"
-            name="nombre"
-            className="form-control-sm"
-          />
+          <div className="form-outline">
+            Product Name
+            <input type="text" id="name" className="form-control" name="name" />
+            <label className="form-label" htmlFor="name"></label>
+          </div>
+        </div>
+        <div className="col">
+          <div className="form-outline">
+            Price
+            <input
+              type="number"
+              id="price"
+              className="form-control"
+              name="price"
+            />
+            <label className="form-label" htmlFor="price"></label>
+          </div>
         </div>
       </div>
-      <div className="row">
-        <div className="col">
-          <label htmlFor="descripcion"> Description </label>
-          <textarea
-            type="text"
-            id="descripcion"
-            name="descripcion"
-            rows="3"
-            className="form-control-sm"
-          />
-        </div>
+
+      <div className="form-outline mb-4">
+        Description
+        <textarea
+          type="text"
+          id="description"
+          className="form-control"
+          name="description"
+          rows="3"
+        />
+        <label className="form-label" htmlFor="description"></label>
       </div>
-      <div className="row">
-        <div className="col">
-          <label htmlFor="precio">Price</label>
-          <input
-            type="number"
-            id="precio"
-            name="precio"
-            className="form-control-sm"
-          />
-        </div>
+
+      <div className="form-outline mb-4">
+        <input type="text" id="img" className="form-control" name="img" />
+        <label className="form-label" htmlFor="img">
+          Image URL
+        </label>
       </div>
-      <div className="row">
-        <div className="col">
-          <label htmlFor="imagen">ImagenURL</label>
-          <input
-            type="text"
-            id="imagen"
-            name="img"
-            className="form-control-sm"
-          />
-        </div>
-      </div>
-      <div className="row">
-        <div className="col">
-          <button className="btn btn-primary"> Add Product </button>
-          <p></p>
-        </div>
+      <div className="container text-center">
+        <button type="submit" className="btn btn-primary btn-block mb-4">
+          Add Product
+        </button>
       </div>
     </form>
   );

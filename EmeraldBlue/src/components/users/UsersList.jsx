@@ -35,27 +35,29 @@ export default function UsersList() {
   else if (isError) return <div> Error : {error.message} </div>;
 
   return (
-    <><h3 className="text-center"> Lista de Usuarios </h3>
-    <div className="container-fluid mx-auto">
-    <table className="table">
-    <thead>
-      <tr key={"header"}>
-        {Object.keys(users[0]).map((key) => (
-          <th scope="col">{key}</th>
-        ))}
-      </tr>
-      </thead>
-      <tbody>
-      {users.map((user) => (
-        <tr key={user.id}>
-          {Object.values(user).map((val) => (
-            <td>{val}</td>
-          ))}
-        </tr>
-      ))}
-      </tbody>
-    </table>
+    <div className="container">
+      <table className="table table-striped table-hover mt-5 shadow-lg">
+        <thead>
+          <tr className="text-white" style={{ background: "black" }}>
+            <th>NAME</th>
+            <th>LASTNAME</th>
+            <th>EMAIL</th>
+            <th>PASSWORD</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users &&
+            users.map((item) => (
+              <tr key={item.id}>
+                <td>{item.name}</td>
+                <td>{item.lastname}</td>
+                <td>{item.email}</td>
+                <td>{item.password}</td>
+              </tr>
+            ))}
+        </tbody>
+      </table>
     </div>
-    </>
   );
 }
+

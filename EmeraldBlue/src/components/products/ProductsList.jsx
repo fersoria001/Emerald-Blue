@@ -5,10 +5,12 @@ import {
   deleteProduct,
   updateProduct,
 } from "../../services/products_service";
-import Product from "./views/Product";
+import Product from "./Product";
+import SearchContext from "../../context/SearchContext";
+import { useContext } from 'react'
 
-
-export default function ProductsList(){
+export default function ProductsList() {
+  const {search, setSearch} = useContext(SearchContext)
   const queryClient = useQueryClient();
   const {
     isLoading,
@@ -34,26 +36,36 @@ export default function ProductsList(){
       queryClient.invalidateQueries("products");
     },
   });
+  let resultado = [];
+  if (!search) {
+    resultado = products;
+  }else{
+    resultado = products.filter((item)=> item.name.includes(search))
+  }
 
-  if (isLoading) return <div> Loading ...</div>;
-  else if (isError) return <div> Error : {error.message} </div>;
-  
-
-  const productCards = products.map((product) => (
-    <div className="col-3 my-2 px-2">
-    <Product
-      product={product}
-      updateProductMutation={updateProductMutation}
-      deleteProductMutation={deleteProductMutation}
-    />
-    </div> ))
-  const productRow = 
-    <div className="row mx-5">
-      {productCards}
-    </div>
   return (
-    <div className="container-fluid mt-5">
-      {productRow}
-    </div>)
-  ;
-};
+    <div className="container-fluid m-4">
+      <div className="row">
+        {products &&
+          resultado.map((product) => (
+            <div key={product.id} className="col-2 col-md-3 m-4">
+              <div className="card" style={{ width: "30vh", height: "30vh" }}>
+                <img
+                  src={product.img}
+                  className="card-img-top"
+                  style={{ height: "10vh", width: "10vh" }}
+                />
+                <div className="card-body">
+                  <h5 className="card-title">{product.name}</h5>
+                  <p className="card-text">{product.description}</p>
+                  <button>add to cart</button>
+                </div>
+              </div>
+            </div>
+            
+          ))}
+          
+      </div>
+    </div>
+  );
+}

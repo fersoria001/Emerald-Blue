@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { getProducts } from "../../services/products_service";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
 import SearchContext from "../../context/SearchContext";
 import { useContext } from 'react'
 import { useProduct } from "../../hooks/useProduct";
@@ -26,7 +24,7 @@ export default function ProductTable() {
           </tr>
         </thead>
         <tbody>
-          {data &&
+          {resultado &&
             resultado.map((item) => (
               <tr key={item.id}>
                 <td>{item.name}</td>
@@ -46,3 +44,4 @@ export default function ProductTable() {
     </div>
   );
 }
+
