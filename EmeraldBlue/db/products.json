@@ -7,6 +7,30 @@
       "price": 12000,
       "inStock": true,
       "img": "https://m.media-amazon.com/images/I/81VqHE-h7uL.jpg"
+    },
+    {
+      "id": 1,
+      "name": "mate de cuero",
+      "description": "color negro",
+      "price": 12000,
+      "inStock": true,
+      "img": "https://m.media-amazon.com/images/I/81VqHE-h7uL.jpg"
+    },
+    {
+      "id": 2,
+      "name": "mate",
+      "description": "madera de roble",
+      "price": 12000,
+      "inStock": false,
+      "img": "https://m.media-amazon.com/images/I/81VqHE-h7uL.jpg"
+    },
+    {
+      "id": 3,
+      "name": "matambre",
+      "description": "matambre de pollo",
+      "price": 12000,
+      "inStock": false,
+      "img": "https://m.media-amazon.com/images/I/81VqHE-h7uL.jpg"
     }
   ],
   "users": [

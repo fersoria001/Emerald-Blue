@@ -5,7 +5,7 @@ import emerald from "./emerald.png";
 import useUser from "../../hooks/useUser";
 import { useContext } from "react";
 import SideBarContext from "../../context/SideBarContext";
-
+import SearchContext from "../../context/SearchContext";
 
 export default function BarraDeNavegacion() {
   //const isLogged = false;
@@ -17,7 +17,11 @@ export default function BarraDeNavegacion() {
   const {sidebar, setSidebar} =  useContext(SideBarContext)
   console.log(sidebar, setSidebar)
   const isShowing = ()=>{setSidebar(!sidebar)}
-
+  const {search, setSearch} = useContext(SearchContext)
+  function buscar(e) {
+    setSearch(e.target.value);
+    console.log(e.target.value);
+  }
   return (
     <nav className="navbar">
       <div className="container-fluid">
@@ -25,11 +29,13 @@ export default function BarraDeNavegacion() {
           <img src={emerald} width="40" height="40" alt="" />
         </Link>
         <form className="form-inline p-3 mx-auto">
-          <input
-            className="form-control-inline"
-            type="search"
-            placeholder="Search"
-          />
+        <input
+        value={search}
+        onChange={buscar}
+        type="text"
+        placeholder="Search..."
+        className="form-control-inline"
+      />
           <button className="btn btn-success ms-2" type="submit">
             Search
           </button>

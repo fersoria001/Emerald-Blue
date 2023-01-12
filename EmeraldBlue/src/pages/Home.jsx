@@ -2,7 +2,6 @@ import React from 'react'
 import '../styles/home.css'
 import flecha from '../assets/Vector.png';
 import regalos from '../assets/regalos.jpg';
-import ProductsList from '../components/products/ProductsList.jsx';
 import { useContext } from 'react'
 import SideBarContext from '../context/SideBarContext'
 export default function Home() {

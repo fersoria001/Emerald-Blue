@@ -6,10 +6,16 @@ const productsAPI = axios.create( //axios devuelve un objeto
     }
 )
 
-export const getProducts = async() => {
+export const getProducts = async()  => {
     const response = await productsAPI.get('/')
     return response.data;
 }
+
+export const getProductsByName = async(query) => {
+    const response = await productsAPI.get('/?name=' + query)
+    return response.data;
+}
+
 
 export const createProduct = (product) => {
     productsAPI.post('/', product)
