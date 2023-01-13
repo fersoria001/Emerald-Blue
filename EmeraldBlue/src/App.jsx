@@ -23,6 +23,7 @@ import "./App.css";
 import SearchContext, {
   SearchContextProvider,
 } from "./context/SearchContext.jsx";
+import Product from "./components/products/Product.jsx";
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
       <Router>
         <SearchContextProvider>
           <BarraDeNavegacion />
-
+          <div className="rutas">
           <Routes>
             {/* <Route path="/" element={<Home />}></Route> */}
             <Route path="/help" element={<Categorias />}></Route>
@@ -39,14 +40,14 @@ function App() {
             <Route path="/ofertas" element={<Ofertas />}></Route>
             <Route path="/carrito" element={<Carrito />}></Route>
             <Route path="/crear_cuenta" element={<CrearCuenta />}></Route>
-            <Route path="/historial" element={<Historial />}></Route>
+            <Route path="/producto" element={<Product />}></Route>
             <Route path="/login" element={<Login />}></Route>
             <Route path="/logout" element={<LogOut />}></Route>
             <Route path="/mis_compras" element={<MisCompras />}></Route>
             <Route path="/vender" element={<Vender />}></Route>
             <Route path="/help" element={<Ayuda />}></Route>
           </Routes>
-          <Footer />
+          </div>
         </SearchContextProvider>
       </Router>
     </UserContextProvider>

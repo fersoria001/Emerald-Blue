@@ -1,0 +1,51 @@
+.galery{    
+    display: flex;
+    gap: 2vh;
+    justify-content: space-around;
+    background-color: grey;
+}
+
+.galery-left{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    height: 80vh;
+    width: 26vh;
+}
+.galery-left img{
+    object-fit: cover;
+    margin-top: 0.5vh;
+    height:25vh;
+    width: 25vh;
+}
+.galery-right img{
+    height: 80vh;
+    width: 70vh;
+}
+.product-details
+{   font-family: 'Sofia Sans', sans-serif;
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+}
+
+.botones-grid{
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    gap: 2%;
+    margin-bottom: 10vh;
+}
+.more-prod{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+.more-prod-galery{
+    display: flex;
+    gap: 2vh;
+}
+.more-prod-galery img{
+    margin: 0.5vh 0.5vh 0.5vh 0.5vh;
+    height: 60vh;
+    width: 40vh;
+}

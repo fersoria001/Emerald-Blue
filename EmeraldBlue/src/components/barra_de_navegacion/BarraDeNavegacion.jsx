@@ -5,11 +5,10 @@ import emerald from "./emerald.png";
 import useUser from "../../hooks/useUser";
 import { useContext } from "react";
 import SearchContext from "../../context/SearchContext";
-import Dropdown from 'react-bootstrap/Dropdown';
-
-
-
+import Categorias from "./Categorias";
 export default function BarraDeNavegacion() {
+  const [isOpen, setIsOpen] = useState(false);
+
   const { isLogged, logout } = useUser();
   const handleClick = (e) => {
     e.preventDefault();
@@ -20,75 +19,67 @@ export default function BarraDeNavegacion() {
     setSearch(e.target.value);
     console.log(e.target.value);
   }
+  function toggleOpen() {
+    setIsOpen({ isOpen: !isOpen });
+    console.log(isOpen);
+  }
+  const categorias = {
+    uno: "Buzos",
+    dos: "Remeras",
+    tres: "Jeans",
+  };
 
   return (
-    <nav className="navbar">
-      <div className="container-fluid">
-        <Link to="/" className="navbar-brand ms-5">
-          <img src={emerald} width="40" height="40" alt="" />
-        </Link>
-        <form className="form-inline p-3 mx-auto">
-          <input
-            value={search}
-            onChange={buscar}
-            type="text"
-            placeholder="Search..."
-            className="form-control-inline"
-          />
-          <button className="btn btn-success ms-2" type="submit">
-            Search
-          </button>
-        </form>
-        <span className="text me-5"> ANUNCIO PROPIO </span>
-      </div>
-      <div className="container py-2">
-      <Dropdown>
-      <Dropdown.Toggle className="btn btn-secondary btn-sm" id="dropdown-basic">
-        Categorias
-      </Dropdown.Toggle>
-      <Dropdown.Menu>
-        <Dropdown.Item href="#/action-1">Mates</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">Termos</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Bombillas</Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
-        <Link to="/ofertas" className="btn btn-primary btn-sm">
-          For Sale
-        </Link>
-        <Link to="/historial" className="btn btn-primary btn-sm">
-          History
-        </Link>
-        <Link to="/mis_compras" className="btn btn-primary btn-sm">
-          My Buys
-        </Link>
-        <Link to="/vender" className="btn btn-primary btn-sm">
-          Sell
-        </Link>
-        <Link to="/crear_cuenta" className="btn btn-primary btn-sm">
-          Create Account
-        </Link>
-        <section id="sesion">
-          {isLogged ? (
-            <Link
-              className="btn btn-primary btn-sm"
-              onClick={handleClick}
-              href="#"
-            >
-              LogOut
+    <header>
+      <nav className="barra-nav">
+        <div className="anuncio px-auto">
+
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It
+          has roots in a piece of classical Latin literature from 45 BC, making
+          it over 2000 ...{" "}
+        </div>
+
+        <div className="barra-nav-container">
+          <span className="categorias">
+            <Categorias titulo={"Hombres"} categorias={categorias} />
+            <Categorias titulo={"Mujeres"} categorias={categorias} />
+
+            <Link to="/ofertas" className="links">
+             Ofertas
             </Link>
-          ) : (
-            <Link to="/login" className="btn btn-primary btn-sm">
-              Login
+          </span>
+          <Link to="/" className="navbar-brand">
+            <img
+              src={emerald}
+              width="40"
+              className="marca"
+              height="40"
+              alt=""
+            />
+          </Link>
+          <span className="interactuar">
+            <input
+              value={search}
+              onChange={buscar}
+              type="search"
+              placeholder="Buscar..."
+              className="busqueda"
+            />
+            <a>
+              <i className="bi bi-search"></i>
+            </a>
+            <Link to="/crear_cuenta" className="links">
+              Ingresar
             </Link>
-          )}
-        </section>
-        <Link to="/help" className="btn btn-primary btn-sm">
-          Help
-        </Link>
-        <Link to="/carrito" className="btn btn-primary btn-sm">
-          My Cart
-        </Link>
-      </div>
-    </nav>
+            <Link to="/historial">
+              <i className="bi bi-bookmark-heart-fill"></i>
+            </Link>
+            <Link to="/carrito">
+              <i className="bi bi-bag"></i>
+            </Link>
+          </span>
+        </div>
+      </nav>
+    </header>
   );
 }

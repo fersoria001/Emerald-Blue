@@ -1,15 +1,38 @@
-.banner{
+.destacados {
+  padding-top: 2vh;
+}
+.products {
+  padding-top: 15vh;
+}
+.texto-top {
+  margin-left: 2vh;
+  font-family: "Oswald", sans-serif;
+  text-align: start;
+  color: black;
+  font-size: 2rem;
+}
+#vermas {
+  height: 90vh;
+  border: solid black;
+  display: flex;
+  gap: 5vh;
+}
+#prever{
+  height: 70vh;
+}
+#about-img{
     height: 30vh;
+    width: 30vh;
 }
-
-.banner img{
-    object-fit: cover;
-    top: 0;
-    left: 0;
-    max-height: 30vh;
+.a {
+  font-family: "Oswald", sans-serif;
+  text-align: start;
+  color: black;
 }
-
-.destacados
-{
-    min-height: 110vh;
+.about-us{
+    display:flex;
+    gap: 5vh;
+    justify-content: center;
+    padding-bottom: 10vh;
+    padding-top:10vh;
 }

@@ -1,4 +1,39 @@
-.navbar{
-    background-color: white;
-    border: black solid;
+.barra-nav {
+  display: flex;
+  flex-direction: column;
+}
+.anuncio {
+  background-color: #6c00ff;
+  text-align: center; 
+  display: inline;    
+  font-family: "Sofia Sans Extra Condensed", sans-serif;
+  color: black;
+}
+.barra-nav-container {
+  padding-top: 9vh;
+  background-color:#3c79f5;
+  justify-content: space-between;
+  display: flex;
+}
+.categorias {
+  display: flex;
+  justify-content: space-between;
+  gap: 5vh;
+  align-items: center;
+}
+.links {
+  margin-left: 2vh;
+  margin-right: 2vh;
+  text-decoration: none;
+  color: black;
+  font-family: "Sofia Sans Extra Condensed", sans-serif;
+  font-size: 1.1em;
+  text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+}
+.interactuar {
+  padding: 0vh 2vh 0vh 2vh;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  gap: 1vh;
 }

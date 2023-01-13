@@ -1,0 +1,16 @@
+#productlist{
+    height: 70vh;
+
+}
+
+.contenedor{
+
+    display: grid;
+    grid-template-columns: 19% 19% 19% 19% 19%;
+    gap: 1%;
+
+}
+.card-img-top{
+    height:50vh;
+}
+

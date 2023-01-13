@@ -16,7 +16,10 @@ export const getProductsByName = async(query) => {
     return response.data;
 }
 
-
+export const getProductPage = async(page) =>{
+    const response = await productsAPI.get(`?_page=${page}&_limit=2`)
+    return response.data
+}
 export const createProduct = (product) => {
     productsAPI.post('/', product)
 }
