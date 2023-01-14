@@ -54,6 +54,20 @@
       "email": "bercho001@gmail.com",
       "password": "asdasgasg",
       "id": 2
+    },
+    {
+      "name": "",
+      "surname": "",
+      "email": "",
+      "password": "",
+      "id": 3
+    },
+    {
+      "name": "fernando",
+      "surname": "soria",
+      "email": "berasofilas@tuvieja.com",
+      "password": "berchotasabe",
+      "id": 4
     }
   ]
 }

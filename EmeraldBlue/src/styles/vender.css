@@ -1,4 +1,13 @@
-.con-producto{
-    height:70vh;
-    
+.admin-panel{
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    row-gap: 10rem;
+    grid-template-rows: 50% 50%;
+
+}
+
+.productos{
+    grid-column-start: 1;
+    grid-column-end: 3;
 }

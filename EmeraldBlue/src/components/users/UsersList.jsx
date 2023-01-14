@@ -36,7 +36,7 @@ export default function UsersList() {
 
   return (
     <div className="container">
-      <table className="table table-striped table-hover mt-5 shadow-lg">
+      <table className="table-sm table-hover shadow-lg">
         <thead>
           <tr className="text-white" style={{ background: "black" }}>
             <th>NAME</th>

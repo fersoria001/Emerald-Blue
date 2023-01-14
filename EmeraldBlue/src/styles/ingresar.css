@@ -1,0 +1,24 @@
+.contenedor-ing {
+  width: 220vh;
+  height: 110vh;
+  padding-top: 33vh;
+}
+.center-rectangle {
+
+  height: 50vh;
+  width: 220vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.center-square
+{
+    background-color:  #439a97;
+    width: 45vh;
+    height: 45vh;
+    border: solid white;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}

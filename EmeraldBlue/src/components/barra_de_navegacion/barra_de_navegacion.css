@@ -3,7 +3,7 @@
   flex-direction: column;
 }
 .anuncio {
-  background-color: #6c00ff;
+  background-color:#62b6b7;
   text-align: center; 
   display: inline;    
   font-family: "Sofia Sans Extra Condensed", sans-serif;
@@ -11,7 +11,8 @@
 }
 .barra-nav-container {
   padding-top: 9vh;
-  background-color:#3c79f5;
+  background-color:#faf8f1;
+  border-bottom:solid black;
   justify-content: space-between;
   display: flex;
 }

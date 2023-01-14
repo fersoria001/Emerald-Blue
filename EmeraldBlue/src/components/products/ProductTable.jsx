@@ -33,7 +33,7 @@ export default function ProductTable() {
                 <td>{item.inStock ? "true" : "false"}</td>
                 <td>
                   <img
-                    style={{ height: "20px", width: "20px" }}
+                    style={{ height: "60px", width: "60px" }}
                     src={item.img}
                   />
                 </td>

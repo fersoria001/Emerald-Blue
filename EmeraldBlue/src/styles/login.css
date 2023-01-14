@@ -1,0 +1,15 @@
+.log-in{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 35vh;
+    height: 25vh;
+}
+label{
+    color: black;
+    font-size: small;
+    margin-left: 25%;
+}
+.log-in a{
+    font-size: 0.8em;
+}

@@ -1,27 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./barra_de_navegacion.css";
 import emerald from "./emerald.png";
 import useUser from "../../hooks/useUser";
-import { useContext } from "react";
 import SearchContext from "../../context/SearchContext";
 import Categorias from "./Categorias";
+import { Dropdown } from "react-bootstrap";
+import { Login } from "../../pages/login/Login.jsx";
+import { useContext } from "react";
+import CartContext from "../../context/CartContext";
 export default function BarraDeNavegacion() {
+  const { show, setShow } = useContext(CartContext);
+  const handleClose = () => {
+    setShow(!show);
+    console.log(show);
+  };
   const [isOpen, setIsOpen] = useState(false);
 
   const { isLogged, logout } = useUser();
   const handleClick = (e) => {
     e.preventDefault();
     logout();
+    console.log("handle");
+    console.log(isLogged.toString());
   };
   const { search, setSearch } = useContext(SearchContext);
   function buscar(e) {
     setSearch(e.target.value);
     console.log(e.target.value);
   }
-  function toggleOpen() {
+  function tipoIngreso() {
     setIsOpen({ isOpen: !isOpen });
-    console.log(isOpen);
   }
   const categorias = {
     uno: "Buzos",
@@ -29,11 +38,22 @@ export default function BarraDeNavegacion() {
     tres: "Jeans",
   };
 
+  /* {
+    if(isOpen) opcion = <Dropdown.Item>
+      <button onClick={tipoIngreso} className="btn btn-primary-dark">
+        Ingresar con usuario y contraseña
+      </button>
+    </Dropdown.Item>
+    else opcion = <Dropdown.Item>
+        <Login />
+      </Dropdown.Item>
+
+  }) */
+
   return (
     <header>
       <nav className="barra-nav">
         <div className="anuncio px-auto">
-
           Contrary to popular belief, Lorem Ipsum is not simply random text. It
           has roots in a piece of classical Latin literature from 45 BC, making
           it over 2000 ...{" "}
@@ -45,7 +65,7 @@ export default function BarraDeNavegacion() {
             <Categorias titulo={"Mujeres"} categorias={categorias} />
 
             <Link to="/ofertas" className="links">
-             Ofertas
+              Ofertas
             </Link>
           </span>
           <Link to="/" className="navbar-brand">
@@ -68,15 +88,45 @@ export default function BarraDeNavegacion() {
             <a>
               <i className="bi bi-search"></i>
             </a>
-            <Link to="/crear_cuenta" className="links">
-              Ingresar
-            </Link>
+            {!isLogged ? (
+              <Dropdown autoClose="outside">
+                <Dropdown.Toggle
+                  id="dropdown-basic"
+                  style={{
+                    background: "#faf8f1",
+                    border: "none",
+                    color: "black",
+                    textDecoration: "none",
+                  }}
+                >
+                  Ingresar
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  {!isOpen ? (
+                    <Dropdown.Item>
+                      <button
+                        onClick={tipoIngreso}
+                        className="btn btn-primary-dark"
+                      >
+                        Ingresar con usuario y contraseña
+                      </button>
+                    </Dropdown.Item>
+                  ) : (
+                    <Dropdown.Item>
+                      <Login />
+                    </Dropdown.Item>
+                  )}
+                </Dropdown.Menu>
+              </Dropdown>
+            ) : (
+              <button onClick={(e) => handleClick(e)}>LogOut</button>
+            )}
             <Link to="/historial">
               <i className="bi bi-bookmark-heart-fill"></i>
             </Link>
-            <Link to="/carrito">
-              <i className="bi bi-bag"></i>
-            </Link>
+
+            <button onClick={handleClose} className="btn"><i className="bi bi-bag"></i></button>
+            
           </span>
         </div>
       </nav>
