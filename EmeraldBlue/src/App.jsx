@@ -28,15 +28,16 @@ import SearchContext, {
 import Product from "./components/products/Product.jsx";
 import Ingresar from "./pages/login/Ingresar.jsx"
 import Registrarse from "./pages/login/Registrarse.jsx";
+import { ProductContextProvider } from "./context/ProductContext.jsx";
 function App() {
   return (
     <UserContextProvider>
       <Router>
         <SearchContextProvider>
         <CartContextProvider>
+        <ProductContextProvider>
           <BarraDeNavegacion />
           <div className="rutas">
-      
           <Cart placement='end'/>
           <Routes>
             {/* <Route path="/" element={<Home />}></Route> */}
@@ -56,6 +57,7 @@ function App() {
             <Route path="/help" element={<Ayuda />}></Route>
           </Routes>
           </div>
+          </ProductContextProvider>
           </CartContextProvider>
         </SearchContextProvider>
       </Router>

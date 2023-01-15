@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Carousel } from "react-bootstrap";
-import { useProduct } from "../../hooks/useProduct";
+import { useProduct, useProductById } from "../../hooks/useProduct";
 import Footer from "../../pages/Footer";
 import "../../styles/product.css";
+import { useContext } from "react";
+import ProductContext from "../../context/ProductContext";
+import { Link } from "react-router-dom";
+import CartContext from "../../context/CartContext";
+import Cart from "../../pages/Cart";
 export default function Product() {
-  const { isLoading, isError, error, data } = useProduct();
-  console.log(data);
-
+  const {product} = useContext(ProductContext);
+  const {cart, setCart, setShow} = useContext(CartContext);
+  const { isLoading, isError, error, data } = useProductById(product); 
+  function addToCart(id){
+    setCart([...cart, id]);
+    setShow(true);
+  }
   if (isLoading) {
     return <span>Loading...</span>;
   }
@@ -14,7 +23,7 @@ export default function Product() {
   if (isError) {
     return <span>Error: {error.message}</span>;
   }
-  return (
+  return data && (
     <>
       <span>{" Home > Hombre > Remeras > Remera de boca"}</span>
       <div className="galery">
@@ -23,14 +32,14 @@ export default function Product() {
             <img src={data[0].img} className="" />
           </div>
           <div className="galery-mid">
-            <img src={data[1].img} />
+            <img src={data[0].img} />
           </div>
           <div className="galery-bot">
-            <img src={data[2].img} />
+            <img src={data[0].img} />
           </div>
         </div>
         <div className="galery-right">
-          <img src={data[2].img} />
+          <img src={data[0].img} />
         </div>
       </div>
       <div className="product-details">
@@ -49,7 +58,7 @@ export default function Product() {
             <button className="btn btn-outline-dark">36</button>
             <button className="btn btn-outline-dark">38</button>
           </div>
-          <button>Agregar al Carrito</button>
+          <button onClick={()=>addToCart(data[0])}>Agregar al Carrito</button>
           <button>Like</button> <br />
           <a> RETIRO EN TIENDA</a> <br />
           <p>{data[0].description}</p>

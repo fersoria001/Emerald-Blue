@@ -15,6 +15,10 @@ export const getProductsByName = async(query) => {
     const response = await productsAPI.get('/?name=' + query)
     return response.data;
 }
+export const getProductsById = async(id) => {
+    const response = await productsAPI.get('/?id=' + id)
+    return response.data;
+}
 
 export const getProductPage = async(page) =>{
     const response = await productsAPI.get(`?_page=${page}&_limit=2`)

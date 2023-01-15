@@ -5,7 +5,8 @@ const CartContext = createContext({} //valor inicial
 
 export function CartContextProvider({children}){
     const [show, setShow] = useState(false);
-    return <CartContext.Provider value={{show, setShow}}>
+    const [cart, setCart] = useState([])
+    return <CartContext.Provider value={{show, setShow, cart, setCart}}>
         {children}
     </CartContext.Provider>
 }

@@ -6,7 +6,7 @@
       "description": "mate de la escaloneta",
       "price": 12000,
       "inStock": true,
-      "img": "https://m.media-amazon.com/images/I/81VqHE-h7uL.jpg"
+      "img": "https://imagesa1.lacoste.com/dw/image/v2/BCWL_PRD/on/demandware.static/-/Sites-master/default/dw5a01cf86/SH3961_P0F_24.jpg?imwidth=645&impolicy=product"
     },
     {
       "id": 1,
@@ -14,7 +14,7 @@
       "description": "color negro",
       "price": 12000,
       "inStock": true,
-      "img": "https://m.media-amazon.com/images/I/81VqHE-h7uL.jpg"
+      "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9bd8e6496e204051aa67addc013e8154_9366/Conjunto_Buzo_Adicolor_Cuello_Redondo_Negro_HB9521_01_laydown.jpg"
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "description": "matambre de pollo",
       "price": 12000,
       "inStock": false,
-      "img": "https://m.media-amazon.com/images/I/81VqHE-h7uL.jpg"
+      "img": "https://www.desigual.com/dw/image/v2/BCVV_PRD/on/demandware.static/-/Sites-desigual-m-catalog/default/dwe4c604d8/images/B2C/22SMCW37_9019_2.jpg?sfrm=jpg&v=webp10&sw=375"
     },
     {
       "name": "Remera de Boca",
