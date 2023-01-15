@@ -7,6 +7,7 @@ import pickupicon from "../assets/pickupoint.png"
 import securepay from "../assets/securepay.png"
 import envios from "../assets/envios.png"
 import Footer from './Footer';
+import BarraDeNavegacion from '../components/barra_de_navegacion/BarraDeNavegacion';
 export default function Home() {
 
   return (

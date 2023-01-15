@@ -68,7 +68,7 @@ export default function BarraDeNavegacion() {
               Ofertas
             </Link>
           </span>
-          <Link to="/" className="navbar-brand">
+          <Link to="/home" className="navbar-brand">
             <img
               src={emerald}
               width="40"

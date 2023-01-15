@@ -1,0 +1,111 @@
+.checkout{
+    display:flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+.checkout-head{
+    display: flex;
+    gap: 4vh;
+}
+.checkout-cart-prod{
+    height: 20vh;
+    width: 90%;
+}
+.checkout-cart-prod img{
+    margin-top: 25%;
+    margin-left: 5%;
+    height: 10vh;
+    width: 10vh;
+}
+.checkout-cart-prod p,h5{
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.cart-resume-container{
+    width: 85%;
+    height: 20vh;
+    display: grid;
+    grid-template-columns: 70% 25%;
+    grid-template-rows: 24% 24% 24% 24%;
+    row-gap: 1vh;
+    column-gap: 2vh;
+}
+.cart-resume-container input{
+    grid-column: 1/1;
+    grid-row: 1/1
+}
+.cart-resume-container button{
+    grid-column: 2/2;
+    grid-row: 1/1
+}
+.cart-resume-container h4{
+    grid-column: 1/2;
+    grid-row: 2/2
+}
+.cart-resume-container h3{
+    grid-column: 1/2;
+    grid-row: 3/3;
+}
+.cart-resume-container p{
+    grid-column: 2/2;
+    grid-row: 2/2;
+}
+.cart-resume-container h5{
+    grid-column: 2/2;
+    grid-row : 3/3;
+}
+#pagar{
+    width: 100%;
+    height: 100%;
+    grid-column: 1/3;
+    grid-row: 4/4;
+}
+.checkout-cart-resume{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20%;
+    width: 90%;
+    padding: 5vh 5vh 10vh 5vh;
+}
+
+@media only screen and (min-width: 1000px){
+    .checkout{
+        display: flex;
+        flex-direction: column;
+        gap: 5vh;
+    }
+    .checkout-head{
+        display: flex;
+        gap: 4vh;
+    }
+    .checkout-cart-prod{
+        height: 40vh;
+        width: 60%;
+    }
+    .checkout-cart-prod img{
+        margin-top: 10%;
+        margin-left: 5%;
+        height: 30vh;
+        width: 20vh;
+    }
+    .checkout-cart-resume{
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+    }
+    .cart-resume-container{
+        width: 80%;
+        height: 40vh;
+        display: grid;
+        grid-template-columns: 70% 25%;
+        grid-template-rows: 24% 24% 24% 24%;
+        row-gap: 1vh;
+        column-gap: 2vh;
+    }
+}

@@ -7,6 +7,7 @@ import CartContext from "../context/CartContext";
 import { useProduct, useProductById } from "../hooks/useProduct";
 
 import "../styles/cart.css";
+import { Link } from "react-router-dom";
 function Cart({ ...props }) {
   const { show, setShow, cart, setCart } = useContext(CartContext);
   const handleClose = () => setShow(false);
@@ -21,8 +22,9 @@ function Cart({ ...props }) {
                     <p>{el.description}</p>
                   </span>
                   <span className="detalles">
-                    <input type="number" />
-                    <span>Precio {el.price} $</span>
+                  <label htmlFor="cantidad">Cantidad</label>
+                    <input type="number" id="cantidad"/>
+                    <span className="ps-4">Precio {el.price} $</span>
                   </span>
                 </div>
               </div>
@@ -38,27 +40,12 @@ function Cart({ ...props }) {
         <Offcanvas.Body>
         <div className = "cart-wrapper">
         {cartItems}
-        {/*       <div key={cart[0].id} className="cart-contenedor">
-                <div className="product-body">
-                  <img src={cart[0].img} />
-                  <span>
-                    <h5>{cart[0].name}</h5>
-                    <p>{cart[0].description}</p>
-                  </span>
-                  <span className="detalles">
-                    <input type="number" />
-                    <span>Precio {cart[0].price} $</span>
-                  </span>
-                </div>
-              </div> */}
-    
-
           <div className="cart-bot">
             <p>Subtotal:</p>
             <span className="ms-auto py-1">subtotal</span>
             <p>Total:</p>
             <span className="ms-auto py-1">total</span>
-            <button className="btn btn-dark">FINALIZAR COMPRA</button>
+            <button className="btn btn-dark"><Link to="/checkout"> FINALIZAR COMPRA </Link></button>
           </div>
           </div>
         </Offcanvas.Body>
