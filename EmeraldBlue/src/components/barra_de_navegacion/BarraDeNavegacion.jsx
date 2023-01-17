@@ -52,13 +52,13 @@ export default function BarraDeNavegacion() {
 
   return (
     <header>
-      <nav className="barra-nav">
-        <div className="anuncio px-auto">
-          Contrary to popular belief, Lorem Ipsum is not simply random text. It
-          has roots in a piece of classical Latin literature from 45 BC, making
-          it over 2000 ...{" "}
-        </div>
+      <p className="container-fluid" style={{background: "#62b6b7"}}>
+        Contrary to popular belief, Lorem Ipsum is not simply random text. It
+        has roots in a piece of classical Latin literature from 45 BC, making it
+        over 2000...{" "}
+      </p>
 
+      <nav className="navbar flex border-bottom">
         <div className="barra-nav-container">
           <span className="categorias">
             <Categorias titulo={"Hombres"} categorias={categorias} />
@@ -93,7 +93,7 @@ export default function BarraDeNavegacion() {
                 <Dropdown.Toggle
                   id="dropdown-basic"
                   style={{
-                    background: "#faf8f1",
+                    background: "white",
                     border: "none",
                     color: "black",
                     textDecoration: "none",
@@ -125,8 +125,9 @@ export default function BarraDeNavegacion() {
               <i className="bi bi-bookmark-heart-fill"></i>
             </Link>
 
-            <button onClick={handleClose} className="btn"><i className="bi bi-bag"></i></button>
-            
+            <button onClick={handleClose} className="btn">
+              <i className="bi bi-bag"></i>
+            </button>
           </span>
         </div>
       </nav>

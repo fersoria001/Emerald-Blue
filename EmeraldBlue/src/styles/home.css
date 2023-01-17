@@ -1,7 +1,9 @@
 .destacados {
+
   padding-top: 2vh;
 }
 .products {
+
   padding-top: 15vh;
 }
 .texto-top {
@@ -12,13 +14,15 @@
   font-size: 2rem;
 }
 #vermas {
+  margin-top:5vh;
+
   height: 90vh;
-  border: solid black;
+
   display: flex;
   gap: 5vh;
 }
 #prever{
-  height: 70vh;
+  height: 80vh;
 }
 #about-img{
     height: 30vh;
@@ -28,6 +32,10 @@
   font-family: "Oswald", sans-serif;
   text-align: start;
   color: black;
+  text-decoration: none;
+}
+.card-body{
+  margin-top: 20%;
 }
 .about-us{
     display:flex;
@@ -35,4 +43,8 @@
     justify-content: center;
     padding-bottom: 10vh;
     padding-top:10vh;
+}
+
+a{
+  text-decoration: none;
 }

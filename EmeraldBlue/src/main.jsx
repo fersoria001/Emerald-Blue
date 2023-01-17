@@ -26,6 +26,8 @@ import ErrorPage from "./ErrorPage";
 import Product from "./components/products/Product";
 import Root from "./pages/Root";
 import CheckOut from "./pages/CheckOut";
+import CartItem from "./components/CartItem";
+import Cart from "./pages/Cart";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -40,6 +42,16 @@ const router = createBrowserRouter([
     path: "/checkout",
     element: <CheckOut />,
     errorElement: <ErrorPage />
+  },
+  {
+    path: "/cart",
+    element: <Cart />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/cart-item", element: <CartItem />, errorElement: <ErrorPage />
+      }
+    ]
   }
 ]);
 const queryClient = new QueryClient();

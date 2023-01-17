@@ -5,53 +5,55 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { useContext } from "react";
 import CartContext from "../context/CartContext";
 import { useProduct, useProductById } from "../hooks/useProduct";
-
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import "../styles/cart.css";
 import { Link } from "react-router-dom";
+import CartItem from "../components/CartItem";
+import { formatCurrency } from "../utilities/formatCurrency";
+
 function Cart({ ...props }) {
-  const { show, setShow, cart, setCart } = useContext(CartContext);
+  const {
+    show,
+    setShow,
+    cartProducts,
+  } = useContext(CartContext);
+  const { isLoading, isError, error, data: storeItems } = useProduct();
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  console.log(cart)
-  const cartItems = cart.map((el) => (
-<div key={el.id} className="cart-contenedor">
-                <div className="product-body">
-                  <img src={el.img} />
-                  <span>
-                    <h5>{el.name}</h5>
-                    <p>{el.description}</p>
-                  </span>
-                  <span className="detalles">
-                  <label htmlFor="cantidad">Cantidad</label>
-                    <input type="number" id="cantidad"/>
-                    <span className="ps-4">Precio {el.price} $</span>
-                  </span>
-                </div>
-              </div>
-    ));
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error.message} </div>;
   return (
     <>
-
       <Offcanvas show={show} onHide={handleClose} {...props}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Carrito</Offcanvas.Title>
         </Offcanvas.Header>
-        
+
         <Offcanvas.Body>
-        <div className = "cart-wrapper">
-        {cartItems}
-          <div className="cart-bot">
-            <p>Subtotal:</p>
-            <span className="ms-auto py-1">subtotal</span>
-            <p>Total:</p>
-            <span className="ms-auto py-1">total</span>
-            <button className="btn btn-dark"><Link to="/checkout"> FINALIZAR COMPRA </Link></button>
-          </div>
+          <div className="cart-wrapper">
+            {cartProducts.map((item) => {
+              return <CartItem key={item.id} {...item} />;
+            })}
+            <div className="cart-bot border mt-5 py-5">
+              <p>Subtotal</p>
+              <span className="ms-auto py-1">subtotal</span>
+              <p>
+                Total{""}{" "}
+                {formatCurrency(
+                  cartProducts.reduce((total, cartItem) => {
+                    const item = storeItems.find((i) => i.id === cartItem.id);
+                    return total + (item?.price || 0) * cartItem.quantity;
+                  }, 0)
+                )}{" "}
+              </p>
+              <span className="ms-auto py-1">total</span>
+              <button className="btn btn-dark">
+                <Link to="/checkout"> FINALIZAR COMPRA </Link>
+              </button>
+            </div>
           </div>
         </Offcanvas.Body>
-
       </Offcanvas>
-
     </>
   );
 }

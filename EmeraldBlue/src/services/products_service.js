@@ -28,6 +28,7 @@ export const createProduct = (product) => {
     productsAPI.post('/', product)
 }
 
+
 export const deleteProduct = id => productsAPI.delete('/' + id)
 
 export const updateProduct = (product) => productsAPI.put('/' + product.id, product)

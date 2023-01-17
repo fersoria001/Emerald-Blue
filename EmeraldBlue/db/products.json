@@ -69,5 +69,33 @@
       "password": "berchotasabe",
       "id": 4
     }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "name": "mate de cuero",
+      "description": "color negro",
+      "price": 12000,
+      "inStock": true,
+      "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9bd8e6496e204051aa67addc013e8154_9366/Conjunto_Buzo_Adicolor_Cuello_Redondo_Negro_HB9521_01_laydown.jpg",
+      "size": "xs",
+      "quantity": 1
+    },
+    {
+      "name": "Remera de Boca",
+      "price": "20000",
+      "description": "Remera que uso un chango",
+      "img": "https://www.dexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dwb3a31687/products/AD_GL4175/AD_GL4175-1.JPG",
+      "inStock": true,
+      "id": 4
+    },
+    {
+      "id": 3,
+      "name": "matambre",
+      "description": "matambre de pollo",
+      "price": 12000,
+      "inStock": false,
+      "img": "https://www.desigual.com/dw/image/v2/BCVV_PRD/on/demandware.static/-/Sites-desigual-m-catalog/default/dwe4c604d8/images/B2C/22SMCW37_9019_2.jpg?sfrm=jpg&v=webp10&sw=375"
+    }
   ]
 }

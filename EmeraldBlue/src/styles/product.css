@@ -29,6 +29,7 @@
 
 }
 
+
 .botones-grid{
     display: grid;
     grid-template-columns: 32% 32% 32%;
@@ -46,6 +47,25 @@
 }
 .more-prod-galery img{
     margin: 0.5vh 0.5vh 0.5vh 0.5vh;
-    height: 60vh;
-    width: 40vh;
 }
+input[type="radio"] {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    border: 2px solid #1FBED6;
+    background-color: white;
+    -webkit-appearance: none; /*to disable the default appearance of radio button*/
+    -moz-appearance: none;
+  }
+  
+  input[type="radio"]:focus { /*no need, if you don't disable default appearance*/
+    outline: none; /*to remove the square border on focus*/
+  }
+  
+  input[type="radio"]:checked { /*no need, if you don't disable default appearance*/
+    background-color: #1FBED6;
+  }
+  
+  input[type="radio"]:checked ~ span:first-of-type {
+    color: white;
+  }

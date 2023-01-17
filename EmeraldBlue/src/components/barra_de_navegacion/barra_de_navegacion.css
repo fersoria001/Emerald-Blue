@@ -3,23 +3,23 @@
   flex-direction: column;
 }
 .anuncio {
+  min-width: 100%;
+  margin-left:10vh;
   background-color:#62b6b7;
-  text-align: center; 
   display: inline;    
   font-family: "Sofia Sans Extra Condensed", sans-serif;
   color: black;
 }
 .barra-nav-container {
+  width: 100%;
   padding-top: 9vh;
-  background-color:#faf8f1;
-  border-bottom:solid black;
   justify-content: space-between;
   display: flex;
 }
 .categorias {
   display: flex;
   justify-content: space-between;
-  gap: 5vh;
+  flex: start;
   align-items: center;
 }
 .links {

@@ -7,20 +7,7 @@
     display: flex;
     gap: 4vh;
 }
-.checkout-cart-prod{
-    height: 20vh;
-    width: 90%;
-}
-.checkout-cart-prod img{
-    margin-top: 25%;
-    margin-left: 5%;
-    height: 10vh;
-    width: 10vh;
-}
-.checkout-cart-prod p,h5{
-    margin-top: 5%;
-    margin-left: 5%;
-}
+
 .cart-resume-container{
     width: 85%;
     height: 20vh;
@@ -69,6 +56,18 @@
     margin-top: 20%;
     width: 90%;
     padding: 5vh 5vh 10vh 5vh;
+}
+
+.cart-product-container{
+    width: 60%;
+    height: auto;
+}
+.cart-product-body{
+
+    height: 15rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
 }
 
 @media only screen and (min-width: 1000px){

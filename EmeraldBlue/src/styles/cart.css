@@ -1,112 +1,42 @@
-.cart-contenedor {
-  height: 100%;
+.contenedor-carro{
   width: 100%;
-
+  height: auto;
+  display:grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-template-rows: 30% 30% 30%;
 }
-.product-body {
-
-  min-height: 100%;
-  width: 100%;
-  display: grid;
-  height: 8rem;
-  grid-template-columns: 25% 35% 35%;
-  grid-template-rows: 60% 20% 20%;
-}
-.product-body input {
-  width: 3rem;
-}
-.detalles {
-
-  display: flex;
-  gap: 2vh;
-  grid-column: 2/4;
-  grid-row: 3/3;
-  margin-bottom: 5%;
-}
-.detalles h4 {
-  margin-left: auto;
-}
-.product-body h5 {
-  grid-column: 2/2;
-  grid-row: 1/1;
-}
-.product-body p {
-  grid-column: 2/3;
-  grid-row: 2/2;
-}
-
-.cart-contenedor img {
-  height: 8rem;
-  width: 5.5rem;
+.contenedor-carro img{
   grid-column: 1/1;
   grid-row: 1/3;
 }
-.cart-bot {
+.el-nombre {
+  grid-column: 2/3;
+  grid-row: 1/1
+}
+.grid-mid-row{
   display: flex;
   flex-direction: column;
+  grid-column: 2/3;
+  grid-row: 2/2;
 }
-
-.cart-wrapper {
-
-  height: 100%;
+.grid-bot-row{
+  grid-column: 1/5;
+  grid-row: 3/4;
   display: flex;
-  flex-direction: column;
-  gap: 1vh;
+  gap:1em;
+  align-items: center;
 }
-@media only screen and (min-width: 375px){
-  .product-body {
-    min-height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 25% 35% 35%;
-    grid-template-rows: 55% 20% 25%;
-  }
-  .product-body input {
-    width: 2rem;
-    height: 2rem;
-  }
-  .cart-contenedor {
-    height: 100%;
-    width: 100%;
-  }
-  .detalles {
-    display: flex;
-    gap: 1vh;
-    grid-column: 1/4;
-    grid-row: 3/3;
-    margin-bottom: 5%;
-  }
-  .detalles h4 {
-    margin-left: auto;
-    font-size: 1em;
-  }
+
+.el-cantidad{
+  width: 3em;
+  height: 2em;
 }
-@media only screen and (min-width: 1000px){
-  .product-body {
-    min-height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 25% 35% 35%;
-    grid-template-rows: 55% 20% 25%;
-  }
-  .product-body input {
-    width: 2rem;
-    height: 2rem;
-  }
-  .cart-contenedor {
-    height: 100%;
-    width: 100%;
-  }
-  .detalles {
-    display: flex;
-    gap: 1vh;
-    grid-column: 1/4;
-    grid-row: 3/3;
-    margin-bottom: 5%;
-  }
-  .detalles h4 {
-    margin-left: auto;
-    font-size: 1em;
-  }
+.el-cantidad-wrap{
+  display: flex;
+  gap:1em;
 }
+.cantidad-label{
+  margin-left: 0rem;
+}
+
 
