@@ -9,6 +9,7 @@ import { Dropdown } from "react-bootstrap";
 import { Login } from "../../pages/login/Login.jsx";
 import { useContext } from "react";
 import CartContext from "../../context/CartContext";
+import cafe from "../../../public/cup-svgrepo-com.svg"
 export default function BarraDeNavegacion() {
   const { show, setShow } = useContext(CartContext);
   const handleClose = () => {
@@ -37,100 +38,43 @@ export default function BarraDeNavegacion() {
     dos: "Remeras",
     tres: "Jeans",
   };
-
-  /* {
-    if(isOpen) opcion = <Dropdown.Item>
-      <button onClick={tipoIngreso} className="btn btn-primary-dark">
-        Ingresar con usuario y contraseña
-      </button>
-    </Dropdown.Item>
-    else opcion = <Dropdown.Item>
-        <Login />
-      </Dropdown.Item>
-
-  }) */
-
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
   return (
-    <header>
-      <p className="container-fluid" style={{background: "#62b6b7"}}>
-        Contrary to popular belief, Lorem Ipsum is not simply random text. It
-        has roots in a piece of classical Latin literature from 45 BC, making it
-        over 2000...{" "}
-      </p>
-
-      <nav className="navbar flex border-bottom">
-        <div className="barra-nav-container">
-          <span className="categorias">
-            <Categorias titulo={"Hombres"} categorias={categorias} />
-            <Categorias titulo={"Mujeres"} categorias={categorias} />
-
-            <Link to="/ofertas" className="links">
-              Ofertas
-            </Link>
-          </span>
-          <Link to="/home" className="navbar-brand">
-            <img
-              src={emerald}
-              width="40"
-              className="marca"
-              height="40"
-              alt=""
-            />
-          </Link>
-          <span className="interactuar">
-            <input
-              value={search}
-              onChange={buscar}
-              type="search"
-              placeholder="Buscar..."
-              className="busqueda"
-            />
-            <a>
-              <i className="bi bi-search"></i>
-            </a>
-            {!isLogged ? (
-              <Dropdown autoClose="outside">
-                <Dropdown.Toggle
-                  id="dropdown-basic"
-                  style={{
-                    background: "white",
-                    border: "none",
-                    color: "black",
-                    textDecoration: "none",
-                  }}
-                >
-                  Ingresar
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  {!isOpen ? (
-                    <Dropdown.Item>
-                      <button
-                        onClick={tipoIngreso}
-                        className="btn btn-primary-dark"
-                      >
-                        Ingresar con usuario y contraseña
-                      </button>
-                    </Dropdown.Item>
-                  ) : (
-                    <Dropdown.Item>
-                      <Login />
-                    </Dropdown.Item>
-                  )}
-                </Dropdown.Menu>
-              </Dropdown>
-            ) : (
-              <button onClick={(e) => handleClick(e)}>LogOut</button>
-            )}
-            <Link to="/historial">
-              <i className="bi bi-bookmark-heart-fill"></i>
-            </Link>
-
-            <button onClick={handleClose} className="btn">
-              <i className="bi bi-bag"></i>
-            </button>
-          </span>
-        </div>
-      </nav>
-    </header>
+    <nav className="navigation">
+      <Link className="brand-name" to="/home"><img src={cafe} style={{height:"auto", width:"45px"}} /></Link>
+      <button
+        className="hamburger"
+        onClick={() => {
+          setIsNavExpanded(!isNavExpanded);
+        }}
+      >
+        <i className="bi bi-list"></i>
+      </button>
+      <button
+        className="cart-icon"
+        onClick={() => {
+          setShow(!show);
+        }}
+      >
+        <i className="bi bi-cart"></i>
+      </button>
+      <div
+        className={
+          isNavExpanded ? "navigation-menu expanded" : "navigation-menu"
+        }
+      >
+        <ul>
+          <li>
+           <Link to="/categorias" state={{category : "hombre"}}> Hombre</Link>
+          </li>
+          <li>
+          <Link to="/categorias" state={{category : "mujer"}}> Mujer</Link>
+          </li>
+          <li>
+          <Link to="/categorias" state={{category : "ofertas"}}>Ofertas</Link>
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
 }

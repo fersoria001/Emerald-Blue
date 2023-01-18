@@ -28,6 +28,10 @@ export const createProduct = (product) => {
     productsAPI.post('/', product)
 }
 
+export const getProductByCategory = async(category) =>{
+    const response = await productsAPI.get('/?category=' + category);
+    return response.data;
+}
 
 export const deleteProduct = id => productsAPI.delete('/' + id)
 

@@ -7,7 +7,15 @@ import pickupicon from "../assets/pickupoint.png"
 import securepay from "../assets/securepay.png"
 import envios from "../assets/envios.png"
 import Footer from './Footer';
+import subbaner from '../assets/subbanner1.jpg'
+import leftimg from '../assets/mujer.jpeg'
+import midimg from '../assets/hombre.jpeg'
+import rightimg from '../assets/bothwm.jpeg'
 export default function Home() {
+  const imgStyle = {
+    height: "50vh",
+    width: "40vh"
+  }
 
   return (
     <>
@@ -20,21 +28,21 @@ export default function Home() {
     <ProductsList />
         </div>
         <div className='container my-5' id="buzos">
-          <img src='https://levisarg.vtexassets.com/assets/vtex.file-manager-graphql/images/8355a5f5-94f0-4e44-b3c3-406d30d7f2d0___2e067753ca25354f846d9c23248bc623.png' className='mx-auto' />
+          <img src={subbaner} className='p-5 my-5 mx-auto' />
         </div>
         <div className='container justify-content-center' id='vermas'>
         <div className="card">
-                <img src="https://media.gq.com.mx/photos/62ed694ef84edeef239b60b9/1:1/w_1428,h_1428,c_limit/ropa-basica-barata-para-hombre-cual-es-como-comprar.jpg" className="card-img-top" id='prever'/>
+                <img src={leftimg} className="card-img-top" id='prever' style={imgStyle}/>
                 <div className="card-body">
                   <a href="">Ver Mas</a>
                 </div>
               </div>  <div className="card">
-                <img src="https://media.gq.com.mx/photos/62ed694ef84edeef239b60b9/1:1/w_1428,h_1428,c_limit/ropa-basica-barata-para-hombre-cual-es-como-comprar.jpg" className="card-img-top" id='prever'/>
+                <img src={midimg} className="card-img-top" id='prever' style={imgStyle} />
                 <div className="card-body">
                 <a href="">Ver Mas</a>
                 </div>
               </div>  <div className="card">
-                <img src="https://media.gq.com.mx/photos/62ed694ef84edeef239b60b9/1:1/w_1428,h_1428,c_limit/ropa-basica-barata-para-hombre-cual-es-como-comprar.jpg" className="card-img-top" id='prever'/>
+                <img src={rightimg} className="card-img-top" id='prever' style={imgStyle}/>
                 <div className="card-body">
                 <a href="">Ver Mas</a>
                 </div>

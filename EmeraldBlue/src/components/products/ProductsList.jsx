@@ -20,217 +20,38 @@ export default function ProductsList() {
   if (isError) {
     return <span>Error: {error.message}</span>;
   }
+  const carouselItem = () => {
+    let arrays = [];
+    let size = 5;
+    let i = 0;
+    let item = null;
+    for (i; i < data.length; i = i + size) {
+      arrays.push(data.slice(i, i + size));
+    }
+    return arrays.map((array, i) => (
+      <Carousel.Item key={i}>
+        <div className="contenedor">
+          {array.map((product) => (
+            <Link to="/producto" state={{productId: product.id}} key={product.id}>
+              <div className="columna">
+                <div className="card">
+                  <img src={product.img} className="card-img-top" />
+                  <div className="card-body">
+                    <h5 className="card-title">{product.name}</h5>
+                    <p className="card-text">${product.price}</p>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>{" "}
+      </Carousel.Item>
+    ));
+  };
 
   return (
     <Carousel interval={4500} variant="dark">
-      <Carousel.Item>
-        <div className="contenedor">
-          <button className="btn" onClick={() => clickProduct(data[0].id)}>
-            <Link to="/producto">
-              <div className="columna">
-                <div className="card">
-                  <img src={data[0].img} className="card-img-top" />
-                  <div className="card-body">
-                    <h5 className="card-title">{data[0].name}</h5>
-                    <p className="card-text">${data[0].price}</p>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </button>
-          <button className="btn" onClick={() => clickProduct(data[1].id)}>
-            <Link to="/producto">
-              <div className="columna">
-                <div className="card">
-                  <img src={data[1].img} className="card-img-top" />
-                  <div className="card-body">
-                    <h5 className="card-title">{data[1].name}</h5>
-                    <p className="card-text">${data[1].price}</p>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </button>
-          <button className="btn" onClick={() => clickProduct(data[2].id)}>
-            <Link to="/producto">
-              <div className="columna">
-                <div className="card">
-                  <img src={data[2].img} className="card-img-top" />
-                  <div className="card-body">
-                    <h5 className="card-title">{data[2].name}</h5>
-                    <p className="card-text">${data[2].price}</p>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </button>
-          <button className="btn" onClick={() => clickProduct(data[3].id)}>
-            <Link to="/producto">
-              <div className="columna">
-                <div className="card">
-                  <img src={data[3].img} className="card-img-top" />
-                  <div className="card-body">
-                    <h5 className="card-title">{data[3].name}</h5>
-                    <p className="card-text">${data[3].price}</p>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </button>
-          <button className="btn" onClick={() => clickProduct(data[0].id)}>
-            <Link to="/producto">
-              <div className="columna">
-                <div className="card">
-                  <img src={data[0].img} className="card-img-top" />
-                  <div className="card-body">
-                    <h5 className="card-title">{data[0].name}</h5>
-                    <p className="card-text">${data[0].price}</p>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </button>
-        </div>
-      </Carousel.Item>
-
-      <Carousel.Item>
-        <div className="contenedor">
-          <button className="btn" onClick={() => clickProduct(data[0].id)}>
-            <Link to="/producto">
-              <div className="columna">
-                <div className="card">
-                  <img src={data[0].img} className="card-img-top" />
-                  <div className="card-body">
-                    <h5 className="card-title">{data[0].name}</h5>
-                    <p className="card-text">${data[0].price}</p>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </button>
-          <button className="btn" onClick={() => clickProduct(data[1].id)}>
-            <Link to="/producto">
-              <div className="columna">
-                <div className="card">
-                  <img src={data[1].img} className="card-img-top" />
-                  <div className="card-body">
-                    <h5 className="card-title">{data[1].name}</h5>
-                    <p className="card-text">${data[1].price}</p>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </button>
-          <button className="btn" onClick={() => clickProduct(data[2].id)}>
-            <Link to="/producto">
-              <div className="columna">
-                <div className="card">
-                  <img src={data[2].img} className="card-img-top" />
-                  <div className="card-body">
-                    <h5 className="card-title">{data[2].name}</h5>
-                    <p className="card-text">${data[2].price}</p>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </button>
-          <button className="btn" onClick={() => clickProduct(data[3].id)}>
-            <Link to="/producto">
-              <div className="columna">
-                <div className="card">
-                  <img src={data[3].img} className="card-img-top" />
-                  <div className="card-body">
-                    <h5 className="card-title">{data[3].name}</h5>
-                    <p className="card-text">${data[3].price}</p>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </button>
-          <button className="btn" onClick={() => clickProduct(data[0].id)}>
-            <Link to="/producto">
-              <div className="columna">
-                <div className="card">
-                  <img src={data[0].img} className="card-img-top" />
-                  <div className="card-body">
-                    <h5 className="card-title">{data[0].name}</h5>
-                    <p className="card-text">${data[0].price}</p>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </button>
-        </div>
-      </Carousel.Item>
-      <Carousel.Item>
-        <div className="contenedor">
-          <button className="btn" onClick={() => clickProduct(data[0].id)}>
-            <Link to="/producto">
-              <div className="columna">
-                <div className="card">
-                  <img src={data[0].img} className="card-img-top" />
-                  <div className="card-body">
-                    <h5 className="card-title">{data[0].name}</h5>
-                    <p className="card-text">${data[0].price}</p>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </button>
-          <button className="btn" onClick={() => clickProduct(data[1].id)}>
-            <Link to="/producto">
-              <div className="columna">
-                <div className="card">
-                  <img src={data[1].img} className="card-img-top" />
-                  <div className="card-body">
-                    <h5 className="card-title">{data[1].name}</h5>
-                    <p className="card-text">${data[1].price}</p>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </button>
-          <button className="btn" onClick={() => clickProduct(data[2].id)}>
-            <Link to="/producto">
-              <div className="columna">
-                <div className="card">
-                  <img src={data[2].img} className="card-img-top" />
-                  <div className="card-body">
-                    <h5 className="card-title">{data[2].name}</h5>
-                    <p className="card-text">${data[2].price}</p>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </button>
-          <button className="btn" onClick={() => clickProduct(data[3].id)}>
-            <Link to="/producto">
-              <div className="columna">
-                <div className="card">
-                  <img src={data[3].img} className="card-img-top" />
-                  <div className="card-body">
-                    <h5 className="card-title">{data[3].name}</h5>
-                    <p className="card-text">${data[3].price}</p>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </button>
-          <button className="btn" onClick={() => clickProduct(data[0].id)}>
-            <Link to="/producto">
-              <div className="columna">
-                <div className="card">
-                  <img src={data[0].img} className="card-img-top" />
-                  <div className="card-body">
-                    <h5 className="card-title">{data[0].name}</h5>
-                    <p className="card-text">${data[0].price}</p>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </button>
-        </div>
-      </Carousel.Item>
+      {carouselItem()}
     </Carousel>
   );
 }

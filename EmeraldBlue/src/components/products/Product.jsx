@@ -1,20 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { Carousel } from "react-bootstrap";
-import { useProduct, useProductById } from "../../hooks/useProduct";
+import React from "react";
+import { useProductById } from "../../hooks/useProduct";
 import Footer from "../../pages/Footer";
 import "../../styles/product.css";
 import { useContext } from "react";
-import ProductContext from "../../context/ProductContext";
-import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import CartContext from "../../context/CartContext";
-import Cart from "../../pages/Cart";
 import ProductsList from "./ProductsList";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { createCartProduct, updateCartProduct } from "../../services/cart_service";
-import { useCartProductById } from "../../hooks/useCart";
 
 export default function Product() {
-  const { productId, setProductId } = useContext(ProductContext);
+  const location = useLocation();
+  const {productId} = location.state;
   const { setShow, cartProducts, increaseProductQuantity } = useContext(CartContext);
   const {isLoading, isError, error, data:product} = useProductById(productId);
 

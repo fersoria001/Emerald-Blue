@@ -13,14 +13,26 @@ export default function ProductForm() {
 
   const queryClient = useQueryClient();
 
+
+  function handleSubmit(e) {
+    e.preventDefault(e);
+    const formData = new FormData(e.target);
+    const newProd = Object.fromEntries(formData);
+    addProductMutation.mutate({
+      ...newProd,
+    });
+    alert("Producto agregado con exito")
+  }
   return (
-    <form onSubmit={addProductMutation}>
+    <form onSubmit={handleSubmit}>
       <div className="row mb-4">
         <div className="col">
           <div className="form-outline">
             Product Name
             <input type="text" id="name" className="form-control" name="name" />
             <label className="form-label" htmlFor="name"></label>
+            <input type="text" id="category" className="form-control" name="category" />
+            <label className="form-label" htmlFor="category">Categoria</label>
           </div>
         </div>
         <div className="col">

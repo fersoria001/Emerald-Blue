@@ -1,8 +1,8 @@
 import React from "react";
 import "../styles/home_banner.css";
-import regalos from "../assets/regalos.jpg";
-import regalos2 from "../assets/regalos2.jpg";
-import regalos3 from "../assets/regalos3.jpeg";
+import banner1 from "../assets/banner1.jpg";
+import banner2 from "../assets/banner2.jpg";
+import banner3 from "../assets/banner3.jpg";
 import { Carousel } from "react-bootstrap";
 export default function HomeBanner() {
   return (
@@ -12,19 +12,16 @@ export default function HomeBanner() {
             <img
               style={{ maxHeight: "60vh", objectFit: "cover"}}
               className="d-block w-100 ms-5"
-              src={regalos}
+              src={banner1}
               alt="First slide"
             />
-
-
           </Carousel.Item>
-
           <Carousel.Item>
             <img
               style={{ maxHeight: "60vh", objectFit: "cover"}}
               className="d-block w-100 mx-auto"
    
-              src={regalos2}
+              src={banner2}
               alt="Second slide"
             />
 
@@ -36,7 +33,7 @@ export default function HomeBanner() {
               style={{ maxHeight: "60vh", objectFit: "cover"}}
               className="d-block w-100 mx-auto"
 
-              src={regalos3}
+              src={banner3}
               alt="Third slide"
             />
 

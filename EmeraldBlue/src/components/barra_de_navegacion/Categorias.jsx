@@ -8,8 +8,9 @@ class Categorias extends React.Component {
     };
   
     toggleOpen = () => this.setState({ isOpen: !this.state.isOpen });
-  
+    
     render() {
+      const titulo = this.props.titulo;
       const menuClass = `dropdown-menu${this.state.isOpen ? " show" : ""}`;
       return (
         <div className="dropdown" onClick={this.toggleOpen} style={this.props.estilo}>
@@ -23,8 +24,8 @@ class Categorias extends React.Component {
             {this.props.titulo}
           </a>
           <div className={menuClass} aria-labelledby="dropdownMenuButton">
-            <a className="dropdown-item" href="#nogo">
-              {this.props.categorias.uno}
+            <a to="/categorias"  className="dropdown-item">
+              {this.props.categorias.uno} 
             </a>
             <a className="dropdown-item" href="#nogo">
               {this.props.categorias.dos}

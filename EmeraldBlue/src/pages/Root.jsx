@@ -5,10 +5,10 @@ import Cart from './Cart'
 
 export default function Root() {
   return (
-    <>
+    <div>
         <BarraDeNavegacion />
         <Cart placement='end'/>
         <Outlet />
-    </>
+    </div>
   )
 }

@@ -28,6 +28,8 @@ import Root from "./pages/Root";
 import CheckOut from "./pages/CheckOut";
 import CartItem from "./components/CartItem";
 import Cart from "./pages/Cart";
+import ProductPage from "./components/products/ProductPage";
+import Vender from "./pages/Vender";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,13 +37,24 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { path: "/home", element: <Home />, errorElement: <ErrorPage /> },
-      { path: "/producto", element: <Product />, errorElement: <ErrorPage />},
+      { path: "/producto", element: <Product />, errorElement: <ErrorPage /> },
+      {
+        path: "/categorias",
+        element: <ProductPage />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/vender",
+        element: <Vender />,
+        errorElement: <ErrorPage />,
+      }
+      
     ],
   },
   {
     path: "/checkout",
     element: <CheckOut />,
-    errorElement: <ErrorPage />
+    errorElement: <ErrorPage />,
   },
   {
     path: "/cart",
@@ -49,10 +62,13 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/cart-item", element: <CartItem />, errorElement: <ErrorPage />
-      }
-    ]
-  }
+        path: "/cart-item",
+        element: <CartItem />,
+        errorElement: <ErrorPage />,
+      },
+    ],
+  },
+
 ]);
 const queryClient = new QueryClient();
 
