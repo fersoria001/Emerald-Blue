@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { useProductCategory } from "../../hooks/useProduct";
 import CartItem from "../CartItem";
-
+import "../../styles/productpage.css"
 export default function ProductPage() {
   const location = useLocation();
   const { category } = location.state;

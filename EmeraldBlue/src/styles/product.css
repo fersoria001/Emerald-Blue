@@ -1,8 +1,11 @@
-.galery{    
+.galery{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     display: flex;
     gap: 2vh;
     justify-content: space-around;
-    background-color: grey;
 }
 
 .galery-left{
@@ -30,11 +33,17 @@
 }
 
 
+
 .botones-grid{
     display: grid;
     grid-template-columns: 32% 32% 32%;
+    grid-template-rows: 50% 50%;
     gap: 2%;
-    margin-bottom: 10vh;
+}
+.botones-grid span{
+    display: flex;
+    flex-direction: column;
+
 }
 .more-prod{
     display: flex;

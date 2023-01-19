@@ -15,11 +15,14 @@
 }
 #vermas {
   margin-top:5vh;
-
-  height: 90vh;
-
+  height: auto;
+  width: 100%;
   display: flex;
-  gap: 5vh;
+  gap: 3%;
+}
+#vermas-card{
+  width: 50vh;
+  height: auto;
 }
 #prever{
   height: 80vh;
@@ -34,10 +37,10 @@
   color: black;
   text-decoration: none;
 }
-.card-body{
-  margin-top: 20%;
-}
+
 .about-us{
+  height: auto;
+   width: 100%;
     display:flex;
     gap: 5vh;
     justify-content: center;

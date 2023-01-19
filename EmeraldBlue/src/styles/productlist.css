@@ -2,13 +2,15 @@
     display: grid;
     grid-template-columns: 15% 15% 15% 15% 15%;
     justify-content: center;
+    gap: 2%;
 }
 
 .card {
     width: 100%;
 }
 .card-img-top{
-    height:50vh;
+    height:30vh;
+    width:auto;
 }
 .card-body{
     height:20vh;

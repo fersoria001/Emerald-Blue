@@ -1,23 +1,24 @@
 .footer-contenedor{
-    height:70vh;
+    height:auto;
     background-color:#f2deba;
     display: flex;
     flex-direction: column;
+    padding-bottom: 3rem;
 }
 .fila{
 text-align: center;
 
 }
-.subscribe{
+.footer-subscribe{
     background-color:#2dcddf;
     display: flex;
     flex-direction: column;
     text-align: center;
 }
-.subscribe button{
-    width: 10%;
+.footer-subscribe button{
+    width: 20%;
 }
-.subscribe input{
+.footer-subscribe input{
     width: 30%;
 }
 #info {
@@ -25,3 +26,8 @@ text-align: center;
     flex: 2;
 }
 
+#footer-grid-col{
+    display:flex;
+    flex-direction: column;
+    gap: 1%;
+}
