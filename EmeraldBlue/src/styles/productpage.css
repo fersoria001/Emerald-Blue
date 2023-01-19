@@ -1,0 +1,14 @@
+.propage-grid{
+    width: 77%;
+    gap: 5px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+
+.pro-item{
+    max-width: 100%;
+    width: 90%;
+    height:auto;
+    display: block;
+}

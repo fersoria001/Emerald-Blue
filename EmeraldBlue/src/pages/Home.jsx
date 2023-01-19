@@ -16,8 +16,7 @@ export default function Home() {
   const imgStyle = {
     height: "25em",
     maxWidth: "100%",
-    objectFit: "cover",
-    objectPosition: "bottom",
+
   }
 
   return (
@@ -56,7 +55,7 @@ export default function Home() {
         </div>
     </section>
 
-    <section className='about-us'>
+    <section className='about-us mx-auto'>
 
       <div className="card">
                 <img src={pickupicon} className="card-img-top" id="about-img"/>
