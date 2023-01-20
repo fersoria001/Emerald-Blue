@@ -2,7 +2,7 @@ import axios from "axios"
 
 const productsAPI = axios.create( //axios devuelve un objeto
     {
-        baseURL: 'http://localhost:3000/products'
+        baseURL: 'https://springbootsql.fly.dev/products'
     }
 )
 
