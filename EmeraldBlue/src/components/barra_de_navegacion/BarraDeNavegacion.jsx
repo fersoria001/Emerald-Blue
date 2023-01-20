@@ -64,6 +64,9 @@ export default function BarraDeNavegacion() {
         }
       >
         <ul>
+        <li>
+           <Link to="/vender">Vender</Link>
+          </li>
           <li>
            <Link to="/categorias" state={{category : "hombre"}}> Hombre</Link>
           </li>
