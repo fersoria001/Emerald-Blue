@@ -62,7 +62,7 @@ export default function ProductForm() {
       </div>
 
       <div className="form-outline mb-4">
-        <input type="text" id="img" className="form-control" name="img" />
+        <input type="text" id="img" className="form-control" name="imgUrl" />
         <label className="form-label" htmlFor="img">
           Image URL
         </label>
