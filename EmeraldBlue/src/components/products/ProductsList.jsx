@@ -35,7 +35,7 @@ export default function ProductsList() {
             <Link to="/producto" state={{productId: product.id}} key={product.id}>
               <div className="columna">
                 <div className="card">
-                  <img src={product.img} className="card-img-top" />
+                  <img src={product.imgUrl} className="card-img-top" />
                   <div className="card-body">
                     <h5 className="card-title">{product.name}</h5>
                     <p className="card-text">${product.price}</p>

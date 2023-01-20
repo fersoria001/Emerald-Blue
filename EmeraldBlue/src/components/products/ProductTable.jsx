@@ -34,7 +34,7 @@ export default function ProductTable() {
                 <td>
                   <img
                     style={{ height: "60px", width: "60px" }}
-                    src={item.img}
+                    src={item.imgUrl}
                   />
                 </td>
               </tr>

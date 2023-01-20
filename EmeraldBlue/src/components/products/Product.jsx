@@ -45,7 +45,7 @@ export default function Product() {
           </div>
         </div> */}
           <div className="galery-right">
-            <img src={product[0].img} />
+            <img src={product[0].imgUrl} />
           </div>
         </div>
         <div className="product-details">
