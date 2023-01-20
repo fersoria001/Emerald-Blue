@@ -1,0 +1,53 @@
+import { useQuery } from @tanstack/react-query;
+import { useState } from react;
+import useDebounce from ../../hooks/useDebounce;
+import { getProductsByName } from ../../services/products_service;
+
+function SearchResult({ isLoading, data }) {
+  return (
+    <div className=w-25 style={{ background: white, color: grey, border: solid grey }}>
+      {data &&
+        data.map((item) => (
+          <div key={item.id} className=text>
+            {item.description}
+          </div>
+        ))}
+    </div>
+  );
+}
+
+export default function BarraDeBusqueda() {
+  const [search, setSearch] = useState();
+
+  const debouncedSearchTerm = useDebounce(search, 200);
+
+  const { data, isLoading, error } = useQuery({
+    queryKey: [search, debouncedSearchTerm],
+    queryFn: () => {
+      if (debouncedSearchTerm) {
+        return getProductsByName(debouncedSearchTerm);
+      }
+      return [];
+    },
+  });
+
+  console.log(data);
+
+  return (
+    <div>
+      <input
+        type=search
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        placeholder=Enter your search term here
+        className=p-2 w-25
+      />
+      {data != undefined ? (
+      <SearchResult isLoading={isLoading} data={data} />
+      ) : ( isLoading &&
+        <div> Loading ...</div>
+      )}
+    </div>
+  );
+}
+
