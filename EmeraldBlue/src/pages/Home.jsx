@@ -14,7 +14,7 @@ import rightimg from '../assets/bothwm.jpeg'
 import { Link } from 'react-router-dom';
 export default function Home() {
   const imgStyle = {
-    height: "25em",
+    height: "25rem",
     maxWidth: "100%",
 
   }
@@ -22,17 +22,22 @@ export default function Home() {
   return (
     <>
     <section className='destacados'>
-    <div className='container-fluid border-solid-black p-5'>
+    <div >
     <HomeBanner />
     </div>
     <div className="container-fluid" style={{marginTop: "10vh",marginBottom:"10vh"}}>
    <p className='texto-top mx-auto'>10% OFF EN TU PRIMERA COMPRA SUSCRIBIENDOTE A NUESTRO NEWSLETTER</p>
-    <ProductsList />
+   <div className='product-list-fullsize'>
+    <ProductsList size={5}/>
+    </div>
+    <div className='product-list-lowvh'>
+    <ProductsList size={2}/>
+    </div>
         </div>
         <div className='container my-5' id="buzos">
           <img src={subbaner} className='img-fluid py-5 my-5 mx-auto' />
         </div>
-        <div className='container-fluid justify-content-center' id='vermas'>
+        <div className='container-fluid' id='vermas'>
         <div className="card" id="vermas-card">
                 <img src={leftimg} className="card-img-top" id='prever' style={imgStyle}/>
                 <div className="card-body">

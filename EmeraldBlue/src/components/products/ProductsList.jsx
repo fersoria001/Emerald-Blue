@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import ProductContext from "../../context/ProductContext";
 
-export default function ProductsList() {
+export default function ProductsList({size}) {
   const { productId, setProductId } = useContext(ProductContext);
   const { isLoading, isError, error, data } = useProduct();
   function clickProduct(id) {
@@ -22,7 +22,7 @@ export default function ProductsList() {
   }
   const carouselItem = () => {
     let arrays = [];
-    let size = 5;
+
     let i = 0;
     let item = null;
     for (i; i < data.length; i = i + size) {
@@ -32,13 +32,13 @@ export default function ProductsList() {
       <Carousel.Item key={i}>
         <div className="contenedor">
           {array.map((product) => (
-            <Link to="/producto" state={{productId: product.id}} key={product.id}>
+            <Link className="a" to="/producto" state={{productId: product.id}} key={product.id}>
               <div className="columna">
-                <div className="card">
-                  <img src={product.imgUrl} className="card-img-top" />
-                  <div className="card-body">
-                    <h5 className="card-title">{product.name}</h5>
-                    <p className="card-text">${product.price}</p>
+                <div className="list-prod">
+                  <img src={product.imgUrl} className="list-prod-img" />
+                  <div className="list-prod-details">
+                    <h5 className="list-prod-details-title">{product.name}</h5>
+                    <p className="list-prod-details-text">${product.price}</p>
                   </div>
                 </div>
               </div>

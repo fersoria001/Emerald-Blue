@@ -11,25 +11,30 @@
   font-family: "Oswald", sans-serif;
   text-align: start;
   color: black;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 #vermas {
   margin-top:5vh;
   height: auto;
   width: 100%;
   display: flex;
-  gap: 3%;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+#vermas>*{ 
+  flex: 1 1 125px;
 }
 #vermas-card{
-  width: 50vh;
+  width: 100%;
   height: auto;
 }
 #prever{
   height: 80vh;
 }
 #about-img{
-    height: 30vh;
-    width: 30vh;
+    height: auto;
+    width: 100%;
 }
 .a {
   font-family: "Oswald", sans-serif;
@@ -42,12 +47,33 @@
   height: auto;
    width: 90%;
     display:flex;
-    gap: 5vh;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
     padding-bottom: 10vh;
     padding-top:10vh;
 }
+.about-us > *{
+  flex: 1 1 200px;
+}
 
 a{
   text-decoration: none;
+}
+.product-list-lowvh{
+  display:block;
+}
+.product-list-fullsize{
+  display:none;
+}
+
+@media (min-width: 720px){
+
+
+.product-list-lowvh{
+  display:none;
+}
+.product-list-fullsize{
+  display:block;
+}
 }

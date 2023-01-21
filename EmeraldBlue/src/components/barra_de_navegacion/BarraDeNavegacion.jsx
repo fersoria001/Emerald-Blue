@@ -42,12 +42,14 @@ export default function BarraDeNavegacion() {
   return (
     <nav className="navigation">
       <Link className="brand-name" to="/home"><img src={cafe} style={{height:"auto", width:"45px"}} /></Link>
+      <input placeholder="Buscar" type="search" className="form-control"/>
       <button
         className="hamburger"
         onClick={() => {
           setIsNavExpanded(!isNavExpanded);
         }}
       >
+      
         <i className="bi bi-list"></i>
       </button>
       <button

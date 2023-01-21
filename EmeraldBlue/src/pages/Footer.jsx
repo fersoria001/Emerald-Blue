@@ -5,7 +5,7 @@ export default function Footer() {
     <>
       <footer className="footer border-top" id="footer">
         <div className="footer-subscribe pb-2" id="subscribe">
-          <h3> SUBSCRIBITE PARA CONOCER MAS </h3>
+          <h3> SUBSCRIBITE PARA CONOCER MÁS </h3>
           <input
             type="email"
             placeholder="E-mail"
@@ -15,7 +15,7 @@ export default function Footer() {
             Al registrarse y confirmar sus datos acepta nuestra{" "}
             <a href="">politica de privacidad.</a>
           </p>
-          <button className="btn btn-outline-dark mx-auto">Subscribirme</button>
+          <button className="btn btn-outline-light mx-auto">Subscribirme</button>
         </div>
         <div className="footer-contenedor">
           <div className="fila pb-5 pt-2">
@@ -24,8 +24,8 @@ export default function Footer() {
             <a >  <i className="bi bi-whatsapp  p-1"></i></a>
             <a href="https://www.instagram.com/fersoria.1" className="a"> <i className="bi bi-instagram  p-1"> </i></a>
           </div>
-          <div className="row">
-            <div className="col-3" id="footer-grid-col">
+          <div className="footer-grid">
+            <div className="footer-grid-col">
               <h5> Ayuda </h5>
               <a href="" > Como comprar </a>
               <br />
@@ -34,7 +34,7 @@ export default function Footer() {
               <a href=""> Terminos y condiciones</a>
               <br />
             </div>
-            <div className="col-3" id="footer-grid-col">
+            <div className="footer-grid-col">
               <h5> Links Utiles</h5>
               <a href="">Vender</a>
               <br />
@@ -43,7 +43,7 @@ export default function Footer() {
               <a href="">Crear Cuenta</a>
               <br />
             </div>
-            <div className="col" id="info">
+            <div className="info">
               <h3> Fernando Soria E-commerce</h3>
               <p>
                 Esto es una version alfa y requiere de más contenido requiere
@@ -53,9 +53,9 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <p className="text-start px-2">
+        <h5 className="text-start px-2">
           Copyright © 2023 Fernando Soria - Todos los derechos reservados
-        </p>
+        </h5>
       </footer>
     </>
   );

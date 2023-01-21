@@ -10,13 +10,18 @@ text-align: center;
 
 }
 .footer-subscribe{
-    background-color:#2dcddf;
+    background-color:black;
     display: flex;
     flex-direction: column;
     text-align: center;
+    padding: 1rem 1rem;
+}
+.footer-subscribe h3, p, button{
+    font-family:Helvetica;
+    color: white;
 }
 .footer-subscribe button{
-    width: 20%;
+    width: 8em;
 }
 .footer-subscribe input{
     width: 30%;
@@ -26,6 +31,13 @@ text-align: center;
     flex: 2;
 }
 
+.footer-grid{
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer-grid > *{
+    flex: 1 1 180px;
+}
 #footer-grid-col{
     display:flex;
     flex-direction: column;

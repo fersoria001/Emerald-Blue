@@ -5,12 +5,17 @@ import banner2 from "../assets/banner2.jpg";
 import banner3 from "../assets/banner3.jpg";
 import { Carousel } from "react-bootstrap";
 export default function HomeBanner() {
+  const estilo = {
+    objectFit: "cover",
+    width: "100%",
+    height: "50%"
+  }
   return (
     <>
         <Carousel interval={5000} variant="dark">
           <Carousel.Item>
             <img
-              style={{ maxHeight: "60vh", objectFit: "cover"}}
+              style={estilo}
               className="d-block w-100 ms-5"
               src={banner1}
               alt="First slide"
@@ -18,7 +23,7 @@ export default function HomeBanner() {
           </Carousel.Item>
           <Carousel.Item>
             <img
-              style={{ maxHeight: "60vh", objectFit: "cover"}}
+              style={estilo}
               className="d-block w-100 mx-auto"
    
               src={banner2}
@@ -30,7 +35,7 @@ export default function HomeBanner() {
 
           <Carousel.Item>
             <img
-              style={{ maxHeight: "60vh", objectFit: "cover"}}
+              style={estilo}
               className="d-block w-100 mx-auto"
 
               src={banner3}
