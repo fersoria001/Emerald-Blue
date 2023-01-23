@@ -30,6 +30,7 @@ import CartItem from "./components/CartItem";
 import Cart from "./pages/Cart";
 import ProductPage from "./components/products/ProductPage";
 import Vender from "./pages/Vender";
+import Ingresar from "./pages/login/Ingresar";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -67,7 +68,11 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
       },
     ],
-  },
+  },  {
+    path: "/ingresar",
+    element: <Ingresar />,
+    errorElement: <ErrorPage />,
+  }
 
 ]);
 const queryClient = new QueryClient();

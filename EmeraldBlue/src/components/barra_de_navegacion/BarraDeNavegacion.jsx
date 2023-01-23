@@ -9,7 +9,14 @@ import { Dropdown } from "react-bootstrap";
 import { Login } from "../../pages/login/Login.jsx";
 import { useContext } from "react";
 import CartContext from "../../context/CartContext";
-import cafe from "../../../public/cup-svgrepo-com.svg"
+import cafe from "../../../public/cup-svgrepo-com.svg";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import { Form, FormControl, Button } from "react-bootstrap";
+import Offcanvas from 'react-bootstrap/Offcanvas';
+
 export default function BarraDeNavegacion() {
   const { show, setShow } = useContext(CartContext);
   const handleClose = () => {
@@ -33,53 +40,96 @@ export default function BarraDeNavegacion() {
   function tipoIngreso() {
     setIsOpen({ isOpen: !isOpen });
   }
-  const categorias = {
-    uno: "Buzos",
-    dos: "Remeras",
-    tres: "Jeans",
-  };
+  const expand = "lg";
+  
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   return (
-    <nav className="navigation">
-      <Link className="brand-name" to="/home"><img src={cafe} style={{height:"auto", width:"45px"}} /></Link>
-      <input placeholder="Buscar" type="search" className="form-control"/>
-      <button
-        className="hamburger"
-        onClick={() => {
-          setIsNavExpanded(!isNavExpanded);
-        }}
-      >
+    <Navbar bg="light border" expand="lg" fixed="top">
+      <Container>
+        <Navbar.Brand>
+          <Link to="/home">
+            <img
+              src={cafe}
+              width="40"
+              height="40"
+              className="d-inline-block align-top"
+              alt="cafe logo"
+            />{" "}
+          </Link>
+        </Navbar.Brand>
+
+       
+      </Container>
+  
+     
+   
+      <Container>
+      <Form className="d-flex pe-5">
+          <Form.Control
+            type="search"
+            placeholder="Search"
+            className="me-2"
+            aria-label="Search"
+          />
+          <Button variant="outline-dark">Search</Button>
+        </Form>
+      <Button className="ms-auto" onClick={handleClose}><i className="bi bi-cart"></i></Button>
+      <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
       
-        <i className="bi bi-list"></i>
-      </button>
-      <button
-        className="cart-icon"
-        onClick={() => {
-          setShow(!show);
-        }}
-      >
-        <i className="bi bi-cart"></i>
-      </button>
-      <div
-        className={
-          isNavExpanded ? "navigation-menu expanded" : "navigation-menu"
-        }
-      >
-        <ul>
-        <li>
-           <Link to="/vender">Vender</Link>
-          </li>
-          <li>
-           <Link to="/categorias" state={{category : "hombre"}}> Hombre</Link>
-          </li>
-          <li>
-          <Link to="/categorias" state={{category : "mujer"}}> Mujer</Link>
-          </li>
-          <li>
-          <Link to="/categorias" state={{category : "ofertas"}}>Ofertas</Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
+            <Navbar.Offcanvas
+              id={`offcanvasNavbar-expand-${expand}`}
+              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+              placement="end"
+            >
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
+                <Navbar.Brand>
+          <Link to="/home">
+            <img
+              src={cafe}
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+              alt="cafe logo"
+            />{" "}
+          </Link>
+        </Navbar.Brand>
+                </Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+                <Nav className="ms-auto">
+                  <NavDropdown
+                    title="Ingresar"
+                    id={`offcanvasNavbarDropdown-expand-${expand}`}
+                  >
+                    <NavDropdown.Item href="#action3"><Link> Ingresar </Link></NavDropdown.Item>
+                    <NavDropdown.Item href="#action4">
+                    <Link> Crear Cuenta </Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href="#action5">
+                      Ingresar con google
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                  <NavDropdown
+                    title="Categorias"
+                    id={`offcanvasNavbarDropdown-expand-${expand}`}
+                  >
+                    <NavDropdown.Item href="#action3"><Link> Hombre </Link></NavDropdown.Item>
+                    <NavDropdown.Item href="#action4">
+                      <Link>Mujer</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href="#action5">
+                      <Link>Ofertas</Link>
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                </Nav>
+  
+              </Offcanvas.Body>
+            </Navbar.Offcanvas>
+            
+      </Container>
+    </Navbar>
   );
 }
