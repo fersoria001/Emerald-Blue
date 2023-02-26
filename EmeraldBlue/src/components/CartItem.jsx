@@ -11,7 +11,7 @@ export default function CartItem({ id, quantity }) {
     useContext(CartContext);
   const { isLoading, isError, data, error } = useProductById(id);
   console.log(`id= ${id}, quantity=${quantity}`)
-
+  console.log(data[0].description)
   if (isLoading) {
     return <div>Loading...</div>;
   } else if (isError) {
@@ -20,29 +20,30 @@ export default function CartItem({ id, quantity }) {
     return (
       <div className="contenedor-carro border">
         <img
-          src={data[0].img}
+          src={data[0].imgUrl}
           className="border"
           style={{ height: "auto", width: "90%" }}
         />
         <h5 className="el-nombre">{data[0].name}</h5>
         <div className="grid-mid-row">
-          <p className="el-description">{data[0].description}</p>
-          <p className="el-talle">Talle {data[0].size}</p>
+          <p className="el-description text-black">{data[0].description}</p>
+          <p className="el-talle text-black ">Talle {data[0].size}</p>
         </div>
         <div className="grid-bot-row">
+        <h5>cantidad</h5>
           <div className="el-cantidad-wrap">
-            <button onClick={() => decreaseProductQuantity(data[0].id)}>
-              {" "}
+          
+            <button className='btn btn-outline-dark' onClick={() => decreaseProductQuantity(data[0].id)}>
               -1
             </button>
             <p>{quantity}</p>
-            <button onClick={() => increaseProductQuantity(data[0].id)}>
+            <button className='btn btn-outline-dark' onClick={() => increaseProductQuantity(data[0].id)}>
               {" "}
               + 1
             </button>
           </div>
-          <p className="ms-auto mt-2 mx-1">
-            {quantity > 1 ? data[0].price * quantity : data[0].price}
+          <p className="ms-auto mt-2 mx-1 text-black">
+            $ {quantity > 1 ? data[0].price * quantity : data[0].price}
           </p>
           <button
             className="btn btn-outline-dark w-25 h-75"

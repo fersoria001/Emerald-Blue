@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./barra_de_navegacion.css";
 import emerald from "./emerald.png";
 import useUser from "../../hooks/useUser";
 import SearchContext from "../../context/SearchContext";
@@ -44,9 +43,9 @@ export default function BarraDeNavegacion() {
   
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   return (
-    <Navbar bg="light border" expand="lg" fixed="top">
-      <Container>
-        <Navbar.Brand>
+    <Navbar bg="light border" expand="lg">   
+      <Container fluid>
+      <Navbar.Brand>
           <Link to="/home">
             <img
               src={cafe}
@@ -57,13 +56,6 @@ export default function BarraDeNavegacion() {
             />{" "}
           </Link>
         </Navbar.Brand>
-
-       
-      </Container>
-  
-     
-   
-      <Container>
       <Form className="d-flex pe-5">
           <Form.Control
             type="search"

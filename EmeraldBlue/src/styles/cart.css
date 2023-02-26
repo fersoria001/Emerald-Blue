@@ -1,10 +1,11 @@
 .contenedor-carro{
+  margin-top: 10px;
   max-width: 100%;
   width: 100%;
   height: auto;
   display:grid;
   grid-template-columns: 30% 30% 30%;
-  grid-template-rows: 30% 30% 30%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
 }
 .contenedor-carro img{
   grid-column: 1/1;
@@ -18,11 +19,11 @@
   display: flex;
   flex-direction: column;
   grid-column: 2/3;
-  grid-row: 2/2;
+  grid-row: 2/3;
 }
 .grid-bot-row{
-  grid-column: 1/5;
-  grid-row: 3/4;
+  grid-column: 1/4;
+  grid-row: 5/5;
   display: flex;
   gap:1em;
   align-items: center;
